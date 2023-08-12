@@ -9,6 +9,8 @@ public class playerMovement : MonoBehaviour
     private SpriteRenderer sprite;
     private Animator anim;
 
+    private bool isCrouching = false;
+
     [SerializeField] private LayerMask jumpableGround;
 
     private float dirX = 0f;
@@ -35,8 +37,17 @@ public class playerMovement : MonoBehaviour
 
         if (Input.GetButtonDown("Jump") && IsGrounded())
         {
-            rb.velocity = new Vector2(rb.velocity.x, jumpForce);  // Change Vector3 to Vector2
+            rb.velocity = new Vector2(rb.velocity.x, jumpForce);
+            isCrouching = false;
+            anim.SetBool("crouch", isCrouching);
         }
+
+        if (Input.GetKeyDown(KeyCode.RightControl))
+        {
+            isCrouching = !isCrouching;
+            anim.SetBool("crouch", isCrouching);  // Set the "Crouch" parameter in the Animator
+        }
+ 
 
         UpdateAnimationUpdate();
     }
