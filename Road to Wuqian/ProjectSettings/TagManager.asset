@@ -6,6 +6,7 @@ TagManager:
   tags:
   - Coins
   - Traps
+  - Enemy
   layers:
   - Default
   - TransparentFX
@@ -40,6 +41,21 @@ TagManager:
   - 
   - 
   m_SortingLayers:
+  - name: Background
+    uniqueID: 3456232115
+    locked: 0
   - name: Default
     uniqueID: 0
+    locked: 0
+  - name: Map Object
+    uniqueID: 179702011
+    locked: 0
+  - name: Enemy
+    uniqueID: 4240241427
+    locked: 0
+  - name: Map
+    uniqueID: 3403209625
+    locked: 0
+  - name: Player
+    uniqueID: 1622306675
     locked: 0
