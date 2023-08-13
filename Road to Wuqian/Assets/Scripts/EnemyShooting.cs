@@ -23,6 +23,18 @@ public class EnemyShooting : MonoBehaviour
 
         //represent distance between enemy and player
         float distance = Vector2.Distance(transform.position, player.transform.position);
+        //get enemy to face player;
+        Vector2 direction = player.transform.position - transform.position;
+        //if player on left rotate to left else right
+        if(player.transform.position.x - transform.position.x < 0)
+        {
+            transform.rotation = Quaternion.Euler(0, 180, 0);
+        }
+        else
+        {
+            transform.rotation = Quaternion.Euler(0, 0, 0);
+        }
+
         //get distance at all times
         Debug.Log(distance);
 
