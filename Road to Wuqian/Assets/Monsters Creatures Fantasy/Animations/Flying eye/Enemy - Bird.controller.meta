@@ -1,12 +1,8 @@
 fileFormatVersion: 2
-xy-test
-guid: 30d280c32ca794b41afe5bd33cc42888
-
-guid: 203557f7d8d3af84da3c37ea696700f1
-main
+guid: 10ebd7c64b8a1eb4799b52ed0f0bce12
 NativeFormatImporter:
   externalObjects: {}
-  mainObjectFileID: 7400000
+  mainObjectFileID: 9100000
   userData: 
   assetBundleName: 
   assetBundleVariant: 
