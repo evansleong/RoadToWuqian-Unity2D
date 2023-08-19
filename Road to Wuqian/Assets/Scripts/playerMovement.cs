@@ -10,6 +10,7 @@ public class playerMovement : MonoBehaviour
     private Animator anim;
 
     private bool isCrouching = false;
+    private bool isSprinting = false;
 
     [SerializeField] private LayerMask jumpableGround;
 
@@ -31,6 +32,13 @@ public class playerMovement : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
+
+        if (Input.GetKey (KeyCode.RightShift))
+        {
+            moveSpeed = 10f;
+            isSprinting = true;
+            anim.SetBool("sprint", isSprinting);
+        }
 
         dirX = Input.GetAxisRaw("Horizontal");
         rb.velocity = new Vector2(dirX * moveSpeed, rb.velocity.y);
