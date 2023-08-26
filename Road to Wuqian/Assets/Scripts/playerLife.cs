@@ -7,6 +7,8 @@ public class playerLife : MonoBehaviour
 {
     public int maxHealth = 10;
     public int health;
+    public HealthBar healthBar;
+
     private Rigidbody2D rb;
     private Animator anim;
 
@@ -14,6 +16,7 @@ public class playerLife : MonoBehaviour
     private void Start()
     {
         health = maxHealth;
+        healthBar.SetMaxHealth(maxHealth);
         rb = GetComponent<Rigidbody2D>();
         anim = GetComponent<Animator>();
     }
@@ -21,6 +24,8 @@ public class playerLife : MonoBehaviour
     public void TakeDamage(int damage)
     {
         health -= damage;
+
+        healthBar.SetHealth(health);
         if(health <= 0)
         {
             Die();
@@ -38,6 +43,8 @@ public class playerLife : MonoBehaviour
     private void Die()
     {
         rb.bodyType = RigidbodyType2D.Static;
+        health = 0;
+        healthBar.SetHealth(health);
         anim.SetTrigger("death");
     }
 
