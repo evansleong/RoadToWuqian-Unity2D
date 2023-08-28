@@ -24,6 +24,7 @@ public class playerLife : MonoBehaviour
     public void TakeDamage(int damage)
     {
         health -= damage;
+        anim.SetTrigger("hurt");
 
         healthBar.SetHealth(health);
         if(health <= 0)

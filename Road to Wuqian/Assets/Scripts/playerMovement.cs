@@ -37,7 +37,6 @@ public class playerMovement : MonoBehaviour
         {
             moveSpeed = 10f;
             isSprinting = true;
-            anim.SetBool("sprint", isSprinting);
         }
 
         dirX = Input.GetAxisRaw("Horizontal");
