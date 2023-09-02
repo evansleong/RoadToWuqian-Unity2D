@@ -9,6 +9,7 @@ public class EnemyShooting : MonoBehaviour
     private float timer;
     private GameObject player;
     private BulletPool bulletPool;
+    private EnemyProjectileScript ep;
 
     // Start is called before the first frame update
     void Start()
@@ -42,17 +43,16 @@ public class EnemyShooting : MonoBehaviour
         }
 
         //get distance at all times
-        Debug.Log(distance);
+        //Debug.Log(distance);
 
         if (distance <= 5)
         {
             timer += Time.deltaTime;
-
+            //Debug.Log("time check" + timer);
                 if (timer > 2)
                 {
                 timer = 0;
                 shoot();
-                Debug.Log("Projectile shot");
                 }
         }
     }
@@ -63,13 +63,16 @@ public class EnemyShooting : MonoBehaviour
 
         //get bullet from object pool
         GameObject bullet = BulletPool.bullet.GetBulletFromPool();
-        Debug.Log("projectile spawned");
+       
 
         //if bullet is not null, set position and enable
         if(bullet != null)
         {
+            Debug.Log("projectile spawned");
             bullet.transform.position = projectilePos.position;
             bullet.SetActive(true);
+            ep = bullet.GetComponent<EnemyProjectileScript>();
+            ep.AimPlayer();
         }
     }
 

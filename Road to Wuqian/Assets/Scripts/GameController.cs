@@ -8,7 +8,8 @@ public class GameController : MonoBehaviour
     // Start is called before the first frame update
     void Start()
     {
-        Instantiate(bulletPool);
+        //Debug.Log("Started!");
+        //Instantiate(bulletPool);
     }
 
     // Update is called once per frame

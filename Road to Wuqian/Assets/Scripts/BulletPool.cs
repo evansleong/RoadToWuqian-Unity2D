@@ -11,13 +11,13 @@ public class BulletPool : MonoBehaviour
     [SerializeField] private GameObject projectilePrefab;
 
     // Start is called before the first frame update
-    //void Awake()
-    //{
-    //    if(bullet == null)
-    //    {
-    //        bullet = this;
-    //    }
-    //}
+    void Awake()
+    {
+        if (bullet == null)
+        {
+            bullet = this;
+        }
+    }
 
     void Start()
     {
