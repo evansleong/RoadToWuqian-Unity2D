@@ -16,7 +16,7 @@ GameObject:
   - component: {fileID: 6801633474922469737}
   - component: {fileID: 34023022947071046}
   - component: {fileID: 5806022670313688507}
-  m_Layer: 0
+  m_Layer: 6
   m_Name: Enemy - Bird
   m_TagString: Enemy
   m_Icon: {fileID: 0}
@@ -37,7 +37,7 @@ Transform:
   m_Children:
   - {fileID: 3589343093775595195}
   m_Father: {fileID: 0}
-  m_RootOrder: 19
+  m_RootOrder: 20
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!212 &2421782035568528889
 SpriteRenderer:
@@ -180,7 +180,7 @@ Rigidbody2D:
   m_Interpolate: 0
   m_SleepingMode: 1
   m_CollisionDetection: 0
-  m_Constraints: 4
+  m_Constraints: 0
 --- !u!95 &34023022947071046
 Animator:
   serializedVersion: 5
@@ -215,7 +215,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   anim: {fileID: 34023022947071046}
-  maxHealth: 5
+  maxHealth: 100
 --- !u!1 &7424792436243258490
 GameObject:
   m_ObjectHideFlags: 0
@@ -225,7 +225,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 3589343093775595195}
-  m_Layer: 0
+  m_Layer: 6
   m_Name: ProjectilePosition
   m_TagString: Untagged
   m_Icon: {fileID: 0}
