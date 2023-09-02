@@ -32,9 +32,9 @@ public class EnemyProjectileScript : MonoBehaviour
     {
         timer += Time.deltaTime;
 
-        if(timer > 7)
+        if(timer > 4)
         {
-            Destroy(this.gameObject);
+            gameObject.SetActive(false);
             Debug.Log("Projectile Despawned");
         }
     }
@@ -45,8 +45,8 @@ public class EnemyProjectileScript : MonoBehaviour
         {
             playerHealth.TakeDamage(damage);
             Debug.Log("player health -2");
-            Destroy(this.gameObject);
-            Debug.Log("Projectile hit player");
+            gameObject.SetActive(false);
+            Debug.Log("Projectile despawned");
         }
     }
 
