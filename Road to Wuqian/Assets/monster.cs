@@ -29,9 +29,11 @@ public class monster : MonoBehaviour
 
     void Die()
     {
-        Debug.Log("Enemy died");
+        GetComponent<MonsterMovement>().enabled = false;
 
+        Debug.Log("Enemy died");
         anim.SetBool("isDead", true);
+        Destroy(gameObject, 2);
 
         GetComponent<Collider2D>().enabled = false;
         this.enabled = false;

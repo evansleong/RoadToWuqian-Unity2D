@@ -66,12 +66,16 @@ public class playerMovement : MonoBehaviour
         if (dirX > 0f)
         {
             state = MovementState.running;
-            sprite.flipX = false;
+            transform.rotation = Quaternion.Euler(0f, 0f, 0f);
+            transform.eulerAngles = new Vector3(0f, 0f, 0f);
+            //sprite.flipX = false;
         }
         else if (dirX < 0f)
         {
             state = MovementState.running;
-            sprite.flipX = true;
+            transform.rotation = Quaternion.Euler(0f, 180f, 0f);
+            transform.eulerAngles = new Vector3(0f, 180f, 0f);
+            //sprite.flipX = true;
         }
         else
         {
