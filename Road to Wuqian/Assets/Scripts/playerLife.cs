@@ -21,16 +21,24 @@ public class playerLife : MonoBehaviour
         anim = GetComponent<Animator>();
     }
 
+    private void Update()
+    {
+        if (health <= 0)
+        {
+            Die();
+        }
+    }
+
     public void TakeDamage(int damage)
     {
         health -= damage;
         anim.SetTrigger("hurt");
 
         healthBar.SetHealth(health);
-        if(health <= 0)
-        {
-            Die();
-        }
+        //if(health <= 0)
+        //{
+        //    Die();
+        //}
     }
 
     private void OnCollisionEnter2D(Collision2D collision)
@@ -44,9 +52,11 @@ public class playerLife : MonoBehaviour
     private void Die()
     {
         rb.bodyType = RigidbodyType2D.Static;
+        //Destroy(gameObject, 10);
         health = 0;
         healthBar.SetHealth(health);
         anim.SetTrigger("death");
+        RestartLevel();
     }
 
     private void RestartLevel()

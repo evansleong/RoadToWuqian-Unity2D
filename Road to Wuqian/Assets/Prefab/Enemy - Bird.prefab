@@ -37,7 +37,7 @@ Transform:
   m_Children:
   - {fileID: 3589343093775595195}
   m_Father: {fileID: 0}
-  m_RootOrder: 19
+  m_RootOrder: 20
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!212 &2421782035568528889
 SpriteRenderer:
@@ -105,6 +105,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   damage: 2
   playerHealth: {fileID: 0}
+  playMovement: {fileID: 0}
 --- !u!114 &9169871155804151588
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -216,6 +217,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   anim: {fileID: 34023022947071046}
   maxHealth: 5
+  destroyTime: 3
 --- !u!1 &7424792436243258490
 GameObject:
   m_ObjectHideFlags: 0

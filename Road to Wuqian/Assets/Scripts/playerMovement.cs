@@ -9,8 +9,13 @@ public class playerMovement : MonoBehaviour
     private SpriteRenderer sprite;
     private Animator anim;
 
+    public float KBForce;
+    public float KBCounter;
+    public float KBTotalTime;
+
+    public bool KnockFromRight;
+
     private bool isCrouching = false;
-    private bool isSprinting = false;
 
     [SerializeField] private LayerMask jumpableGround;
 
@@ -32,15 +37,26 @@ public class playerMovement : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-
-        if (Input.GetKey (KeyCode.RightShift))
-        {
-            moveSpeed = 10f;
-            isSprinting = true;
-        }
-
         dirX = Input.GetAxisRaw("Horizontal");
-        rb.velocity = new Vector2(dirX * moveSpeed, rb.velocity.y);
+        if (KBCounter <= 0)
+        {
+            rb.velocity = new Vector2(dirX * moveSpeed, rb.velocity.y);
+        }
+        else
+        {
+            if(KnockFromRight == true)
+            {
+                rb.velocity = new Vector2(-KBForce, KBForce);
+            }
+            if(KnockFromRight == false)
+            {
+                rb.velocity = new Vector2(KBForce, KBForce);
+            }
+
+            KBCounter -= Time.deltaTime;
+        }
+        //dirX = Input.GetAxisRaw("Horizontal");
+        //rb.velocity = new Vector2(dirX * moveSpeed, rb.velocity.y);
 
         if (Input.GetButtonDown("Jump") && IsGrounded())
         {

@@ -8,6 +8,7 @@ public class monster : MonoBehaviour
 
     public int maxHealth = 100;
     int currentHealth;
+    [SerializeField] private float destroyTime = 3;
 
     // Start is called before the first frame update
     void Start()
@@ -33,7 +34,7 @@ public class monster : MonoBehaviour
 
         Debug.Log("Enemy died");
         anim.SetBool("isDead", true);
-        Destroy(gameObject, 2);
+        Destroy(gameObject, destroyTime);
 
         GetComponent<Collider2D>().enabled = false;
         this.enabled = false;
