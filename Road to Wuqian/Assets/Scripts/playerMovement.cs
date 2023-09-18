@@ -14,6 +14,7 @@ public class playerMovement : MonoBehaviour
     public float KBTotalTime;
 
     public bool KnockFromRight;
+    public bool facingRight;
 
     private bool isCrouching = false;
 
@@ -81,6 +82,7 @@ public class playerMovement : MonoBehaviour
 
         if (dirX > 0f)
         {
+            facingRight = true;
             state = MovementState.running;
             transform.rotation = Quaternion.Euler(0f, 0f, 0f);
             transform.eulerAngles = new Vector3(0f, 0f, 0f);
@@ -88,6 +90,7 @@ public class playerMovement : MonoBehaviour
         }
         else if (dirX < 0f)
         {
+            facingRight = false;
             state = MovementState.running;
             transform.rotation = Quaternion.Euler(0f, 180f, 0f);
             transform.eulerAngles = new Vector3(0f, 180f, 0f);
