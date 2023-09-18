@@ -5,6 +5,8 @@ using UnityEngine.SceneManagement;
 
 public class MenuScript : MonoBehaviour
 {
+    [SerializeField]private AudioClip buttonSound;
+
     // Start is called before the first frame update
     void Start()
     {
@@ -25,10 +27,12 @@ public class MenuScript : MonoBehaviour
 
     public void playGame()
     {
+        SoundManager.instance.PlaySound(buttonSound);
         StartCoroutine(wait());
     }
     public void quitGame()
     {
+        SoundManager.instance.PlaySound(buttonSound);
         Application.Quit();
     }
 }

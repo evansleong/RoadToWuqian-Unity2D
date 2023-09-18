@@ -37,7 +37,7 @@ Transform:
   m_Children:
   - {fileID: 3589343093775595195}
   m_Father: {fileID: 0}
-  m_RootOrder: 20
+  m_RootOrder: 18
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!212 &2421782035568528889
 SpriteRenderer:
@@ -120,6 +120,8 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   projectile: {fileID: 2776096897851570969, guid: 366725c41ee14324983c4d996b241801, type: 3}
   projectilePos: {fileID: 3589343093775595195}
+  anim: {fileID: 34023022947071046}
+  shootSound: {fileID: 8300000, guid: 56703418e3aed4c47a5f6622816b8e41, type: 3}
 --- !u!70 &4129590042805196183
 CapsuleCollider2D:
   m_ObjectHideFlags: 0

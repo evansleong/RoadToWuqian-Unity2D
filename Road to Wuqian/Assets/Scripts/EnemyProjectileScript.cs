@@ -10,6 +10,7 @@ public class EnemyProjectileScript : MonoBehaviour
     private float timer;
     public int damage;
     public playerLife playerHealth;
+    [SerializeField] private AudioClip projHitSound;
 
     void Awake()
     {
@@ -41,6 +42,7 @@ public class EnemyProjectileScript : MonoBehaviour
     {
         if (other.gameObject.CompareTag("Player"))
         {
+            SoundManager.instance.PlaySound(projHitSound);
             playerHealth = other.gameObject.GetComponent<playerLife>();
             playerHealth.TakeDamage(damage);
             Debug.Log("player health -2");

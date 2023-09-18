@@ -10,6 +10,8 @@ public class EnemyShooting : MonoBehaviour
     private GameObject player;
     private BulletPool bulletPool;
     private EnemyProjectileScript ep;
+    public Animator anim;
+    [SerializeField] private AudioClip shootSound;
 
     // Start is called before the first frame update
     void Start()
@@ -53,7 +55,8 @@ public class EnemyShooting : MonoBehaviour
                 {
                 timer = 0;
                 shoot();
-                }
+            }
+            anim.SetBool("isAttack", false);
         }
     }
 
@@ -62,6 +65,8 @@ public class EnemyShooting : MonoBehaviour
         //Instantiate(projectile, projectilePos.position,Quaternion.identity);
 
         //get bullet from object pool
+        anim.SetBool("isAttack", true);
+        SoundManager.instance.PlaySound(shootSound);
         GameObject bullet = BulletPool.bullet.GetBulletFromPool();
        
 

@@ -7,6 +7,7 @@ public class ProjectileLaunch : MonoBehaviour
     public GameObject projectilePrefab;
     public Transform launchPoint;
     public Animator anim;
+    [SerializeField] private AudioClip launchSound;
 
     public float shootTime;
     public float shootCounter;
@@ -24,6 +25,7 @@ public class ProjectileLaunch : MonoBehaviour
         if(Input.GetKeyDown(KeyCode.Space) && shootCounter <= 0)
         {
             anim.SetTrigger("cast");
+            SoundManager.instance.PlaySound(launchSound);
             Instantiate(projectilePrefab, launchPoint.position, Quaternion.identity);
             shootCounter = shootTime;
         }

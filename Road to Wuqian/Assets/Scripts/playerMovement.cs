@@ -8,6 +8,9 @@ public class playerMovement : MonoBehaviour
     private BoxCollider2D coll;
     private SpriteRenderer sprite;
     private Animator anim;
+    [SerializeField] private AudioClip walkSound;
+    [SerializeField] private AudioClip jumpSound;
+    [SerializeField] private AudioClip kbSound;
 
     public float KBForce;
     public float KBCounter;
@@ -17,6 +20,8 @@ public class playerMovement : MonoBehaviour
     public bool facingRight;
 
     private bool isCrouching = false;
+    private bool hasKBsound = false;
+    private bool hasWalkSound = false;
 
     [SerializeField] private LayerMask jumpableGround;
 
@@ -42,25 +47,33 @@ public class playerMovement : MonoBehaviour
         if (KBCounter <= 0)
         {
             rb.velocity = new Vector2(dirX * moveSpeed, rb.velocity.y);
+            hasKBsound = false;
         }
         else
         {
-            if(KnockFromRight == true)
+            if (KBCounter > 0 && !hasKBsound)
             {
-                rb.velocity = new Vector2(-KBForce, KBForce);
-            }
-            if(KnockFromRight == false)
-            {
-                rb.velocity = new Vector2(KBForce, KBForce);
+                if (KnockFromRight == true)
+                {
+                    SoundManager.instance.PlaySound(kbSound);
+                    rb.velocity = new Vector2(-KBForce, KBForce);
+                }
+                if (KnockFromRight == false)
+                {
+                    SoundManager.instance.PlaySound(kbSound);
+                    rb.velocity = new Vector2(KBForce, KBForce);
+                }
             }
 
             KBCounter -= Time.deltaTime;
+            hasKBsound = true;
         }
         //dirX = Input.GetAxisRaw("Horizontal");
         //rb.velocity = new Vector2(dirX * moveSpeed, rb.velocity.y);
 
         if (Input.GetButtonDown("Jump") && IsGrounded())
         {
+            SoundManager.instance.PlaySound(jumpSound);
             rb.velocity = new Vector2(rb.velocity.x, jumpForce);
             isCrouching = false;
             anim.SetBool("crouch", isCrouching);
@@ -79,6 +92,11 @@ public class playerMovement : MonoBehaviour
     private void UpdateAnimationUpdate()
     {
         MovementState state;
+        if(dirX !=0 && !hasWalkSound)
+        {
+            SoundManager.instance.PlaySound(walkSound);
+            hasWalkSound = true;
+        }
 
         if (dirX > 0f)
         {
@@ -99,6 +117,7 @@ public class playerMovement : MonoBehaviour
         else
         {
             state = MovementState.idle;
+            hasWalkSound = false;
         }
 
         if (rb.velocity.y > .1f)

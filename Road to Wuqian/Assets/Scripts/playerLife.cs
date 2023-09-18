@@ -8,6 +8,8 @@ public class playerLife : MonoBehaviour
     public int maxHealth = 10;
     public int health;
     public HealthBar healthBar;
+    [SerializeField] private AudioClip deathSound;
+    private bool hasDeathSound = false;
 
     private Rigidbody2D rb;
     private Animator anim;
@@ -23,7 +25,7 @@ public class playerLife : MonoBehaviour
 
     private void Update()
     {
-        if (health <= 0)
+        if (health <= 0 && !hasDeathSound)
         {
             Die();
         }
@@ -55,12 +57,23 @@ public class playerLife : MonoBehaviour
         //Destroy(gameObject, 10);
         health = 0;
         healthBar.SetHealth(health);
+        if (!hasDeathSound)
+        {
+            SoundManager.instance.PlaySound(deathSound);
+            hasDeathSound = true;
+        }
         anim.SetTrigger("death");
         RestartLevel();
     }
 
+    IEnumerator wait()
+    {
+        yield return new WaitForSeconds(1);
+        SceneManager.LoadScene(SceneManager.GetActiveScene().name);
+    }
+
     private void RestartLevel()
     {
-        SceneManager.LoadScene(SceneManager.GetActiveScene().name);
+        StartCoroutine(wait());
     }
 }

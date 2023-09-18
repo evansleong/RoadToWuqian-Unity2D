@@ -17,7 +17,8 @@ GameObject:
   - component: {fileID: 4905903700296319177}
   - component: {fileID: 7056991573414281186}
   - component: {fileID: 5867929378866950489}
-  m_Layer: 0
+  - component: {fileID: 4610804446853400507}
+  m_Layer: 7
   m_Name: Player
   m_TagString: Player
   m_Icon: {fileID: 0}
@@ -37,8 +38,9 @@ Transform:
   m_ConstrainProportionsScale: 0
   m_Children:
   - {fileID: 8506663694583805933}
+  - {fileID: 6554170416439657342}
   m_Father: {fileID: 0}
-  m_RootOrder: 0
+  m_RootOrder: 3
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!212 &1176985532637283213
 SpriteRenderer:
@@ -176,6 +178,14 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: c5605e8891545bc4f8a270335557271a, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  walkSound: {fileID: 8300000, guid: df7087e4d8a8bb546bc08ce68632903f, type: 3}
+  jumpSound: {fileID: 8300000, guid: 4e349dc959014a845b9aa317d1c2b7f0, type: 3}
+  kbSound: {fileID: 8300000, guid: 7c47b20bb9874304a809dc5580d403ba, type: 3}
+  KBForce: 6
+  KBCounter: 0
+  KBTotalTime: 0.2
+  KnockFromRight: 0
+  facingRight: 0
   jumpableGround:
     serializedVersion: 2
     m_Bits: 8
@@ -230,6 +240,7 @@ MonoBehaviour:
   maxHealth: 50
   health: 50
   healthBar: {fileID: 0}
+  deathSound: {fileID: 8300000, guid: f7dad9bc255d21f439d1dc13987338b3, type: 3}
 --- !u!114 &5867929378866950489
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -250,6 +261,55 @@ MonoBehaviour:
   attackRange: 0.81
   attackDamage: 40
   attackRate: 2
+--- !u!114 &4610804446853400507
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 446554839691087937}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 97aaac72a1e9cf443a456a54f68a4017, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  projectilePrefab: {fileID: 6811289876410802737, guid: add3d423360aa6e4192678ceb280fe60, type: 3}
+  launchPoint: {fileID: 6554170416439657342}
+  anim: {fileID: 0}
+  launchSound: {fileID: 8300000, guid: a652877b012108e41871f867ada9f176, type: 3}
+  shootTime: 0.3
+  shootCounter: 0
+--- !u!1 &2681534128052075617
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 6554170416439657342}
+  m_Layer: 7
+  m_Name: LaunchPoint
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &6554170416439657342
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2681534128052075617}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 1.4, y: -0.71, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
+  m_Children: []
+  m_Father: {fileID: 336037850960888969}
+  m_RootOrder: -1
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &6647254783899746108
 GameObject:
   m_ObjectHideFlags: 0

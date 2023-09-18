@@ -174,3 +174,4 @@ MonoBehaviour:
   force: 5
   damage: 2
   playerHealth: {fileID: 0}
+  projHitSound: {fileID: 8300000, guid: 2b21ef916f6943c439b71a7c74568878, type: 3}
