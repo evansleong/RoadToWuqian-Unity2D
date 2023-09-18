@@ -13,6 +13,8 @@ public class playerLife : MonoBehaviour
 
     private Rigidbody2D rb;
     private Animator anim;
+    private Checkpoint ckptMng;
+    private Vector3 lastCheckPointPos;
 
     // Start is called before the first frame update
     private void Start()
@@ -21,6 +23,7 @@ public class playerLife : MonoBehaviour
         healthBar.SetMaxHealth(maxHealth);
         rb = GetComponent<Rigidbody2D>();
         anim = GetComponent<Animator>();
+        ckptMng = FindObjectOfType<Checkpoint>();
     }
 
     private void Update()
@@ -37,10 +40,7 @@ public class playerLife : MonoBehaviour
         anim.SetTrigger("hurt");
 
         healthBar.SetHealth(health);
-        //if(health <= 0)
-        //{
-        //    Die();
-        //}
+
     }
 
     private void OnCollisionEnter2D(Collision2D collision)
@@ -49,6 +49,14 @@ public class playerLife : MonoBehaviour
         {
             Die();
         } 
+    }
+
+    private void OnTriggerEnter2D(Collider2D other)
+    {
+        if (other.CompareTag("Checkpoint"))
+        {
+            lastCheckPointPos = other.transform.position;
+        }
     }
 
     private void Die()
@@ -63,17 +71,14 @@ public class playerLife : MonoBehaviour
             hasDeathSound = true;
         }
         anim.SetTrigger("death");
-        RestartLevel();
+        transform.position = ckptMng.getLastCkptPos();
+        StartCoroutine(RestartLevel());
     }
 
-    IEnumerator wait()
+    IEnumerator RestartLevel()
     {
         yield return new WaitForSeconds(1);
         SceneManager.LoadScene(SceneManager.GetActiveScene().name);
     }
 
-    private void RestartLevel()
-    {
-        StartCoroutine(wait());
-    }
 }
