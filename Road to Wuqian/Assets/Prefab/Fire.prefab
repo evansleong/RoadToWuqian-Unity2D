@@ -165,5 +165,5 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 737700d7eb763be449ccbb1c0bd37152, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  trapDamage: 100
+  trapDamage: 50
   injureSound: {fileID: 8300000, guid: fd46d5d7145935b4b98eb884e48071fb, type: 3}
