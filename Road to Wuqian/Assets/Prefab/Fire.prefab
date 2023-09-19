@@ -12,6 +12,7 @@ GameObject:
   - component: {fileID: 7013771380689574379}
   - component: {fileID: 6979168839195028354}
   - component: {fileID: 5720361374800373227}
+  - component: {fileID: 3486386576770571918}
   m_Layer: 0
   m_Name: Fire
   m_TagString: Traps
@@ -32,7 +33,7 @@ Transform:
   m_ConstrainProportionsScale: 0
   m_Children: []
   m_Father: {fileID: 0}
-  m_RootOrder: 30
+  m_RootOrder: -1
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!212 &7013771380689574379
 SpriteRenderer:
@@ -152,3 +153,17 @@ Animator:
   m_AllowConstantClipSamplingOptimization: 1
   m_KeepAnimatorStateOnDisable: 0
   m_WriteDefaultValuesOnDisable: 0
+--- !u!114 &3486386576770571918
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1412451865489507024}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 737700d7eb763be449ccbb1c0bd37152, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  trapDamage: 100
+  injureSound: {fileID: 8300000, guid: fd46d5d7145935b4b98eb884e48071fb, type: 3}
