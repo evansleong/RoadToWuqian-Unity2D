@@ -69,7 +69,7 @@ public class EnemyShooting : MonoBehaviour
         //get bullet from object pool
         Debug.Log("attack true");
         anim.SetBool("isAttack", true);
-        StartCoroutine();
+        //StartCoroutine();
         SoundManager.instance.PlaySound(shootSound);
         GameObject bullet = BulletPool.bullet.GetBulletFromPool();
        
