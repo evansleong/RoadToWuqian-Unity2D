@@ -56,6 +56,8 @@ public class EnemyShooting : MonoBehaviour
                 timer = 0;
                 shoot();
             }
+
+            Debug.Log("attack false");
             anim.SetBool("isAttack", false);
         }
     }
@@ -65,7 +67,9 @@ public class EnemyShooting : MonoBehaviour
         //Instantiate(projectile, projectilePos.position,Quaternion.identity);
 
         //get bullet from object pool
+        Debug.Log("attack true");
         anim.SetBool("isAttack", true);
+        //StartCoroutine();
         SoundManager.instance.PlaySound(shootSound);
         GameObject bullet = BulletPool.bullet.GetBulletFromPool();
        
