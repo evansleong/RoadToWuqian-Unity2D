@@ -12,6 +12,13 @@ public class itemCollector : MonoBehaviour, IDataPersistance
     public void LoadData(GameData data)
     {
         this.coins = data.coins;
+        foreach(KeyValuePair<string,bool>pair in data.coins)
+        {
+            if (pair.Value)
+            {
+                coins++;
+            }
+        }
     }
 
     public void SaveData(ref GameData data)
