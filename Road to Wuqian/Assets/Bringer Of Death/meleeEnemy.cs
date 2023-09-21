@@ -7,10 +7,13 @@ public class meleeEnemy : MonoBehaviour
     [SerializeField] private float attackCooldown;
     [SerializeField] private float colliderDistance;
     [SerializeField] private float range;
-    [SerializeField] private int damage;
+    [SerializeField] private int meleeDamage;
+    [SerializeField] private int rangeDamage;
     [SerializeField] private BoxCollider2D boxCollider;
     [SerializeField] private CircleCollider2D circleCollider;
     [SerializeField] private LayerMask playerLayer;
+    [SerializeField] private AudioClip meleeSound;
+    [SerializeField] private AudioClip rangeSound;
     private float cooldownTimer = Mathf.Infinity;
 
     private Animator anim;
@@ -36,6 +39,7 @@ public class meleeEnemy : MonoBehaviour
             {
                 cooldownTimer = 0;
                 anim.SetTrigger("meleeAttack");
+                SoundManager.instance.PlaySound(meleeSound);
             }
         }
 
@@ -50,6 +54,7 @@ public class meleeEnemy : MonoBehaviour
             {
                 cooldownTimer = 0;
                 anim.SetTrigger("rangeAttack");
+                SoundManager.instance.PlaySound(rangeSound);
             }         
         }
         if(enemyPatrol != null)
@@ -60,10 +65,6 @@ public class meleeEnemy : MonoBehaviour
 
     private bool PlayerInRange()
     {
-        // RaycastHit2D hit = Physics2D.CircleCast(circleCollider.bounds.center + transform.right * range * transform.localScale.x * colliderDistance, 
-        // new Vector3(circleCollider.bounds.size.x * range, circleCollider.bounds.size.y, circleCollider.bounds.size.z),
-        // 0, Vector2.left, 0, playerLayer);
-
             RaycastHit2D hit = Physics2D.CircleCast(
             circleCollider.bounds.center + transform.right * range * transform.localScale.x * colliderDistance,      // Center of the circle.
             circleCollider.radius * range,     // Radius of the circle multiplied by range.
@@ -106,12 +107,12 @@ public class meleeEnemy : MonoBehaviour
         if(PlayerInSight())
         {
             playerHealth = gameObject.GetComponent<playerLife>();
-            playerHealth.TakeDamage(damage);
+            playerHealth.TakeDamage(meleeDamage);
         }
         if(PlayerInRange())
         {
             playerHealth = gameObject.GetComponent<playerLife>();
-            playerHealth.TakeDamage(5);
+            playerHealth.TakeDamage(rangeDamage);
         }        
     }
 }
