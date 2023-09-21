@@ -19,12 +19,16 @@ public class itemCollector : MonoBehaviour, IDataPersistance
         data.coins = this.coins;
     }
 
-    private void OnTriggerEnter2D(Collider2D collision)
+    public void CollectCoins(int amount)
     {
-        if (collision.gameObject.CompareTag("Coins"))
+        coins += amount;
+        UpdateCoinsText();
+    }
+
+    private void UpdateCoinsText()
+    {
+        if (coinsText != null)
         {
-            Destroy(collision.gameObject);
-            coins+=2;
             coinsText.text = " X " + coins;
         }
     }
