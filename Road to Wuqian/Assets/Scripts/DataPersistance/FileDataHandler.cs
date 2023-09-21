@@ -18,7 +18,7 @@ public class FileDataHandler
     public GameData Load()
     {
         //use path.combine to link file path just in case diff OS
-        string fullPath = Path.Combine(Application.persistentDataPath, dataFileName);
+        string fullPath = Path.Combine(dataDirPath, dataFileName);
         GameData loadedData = null;
         if (File.Exists(fullPath))
         {
@@ -45,12 +45,12 @@ public class FileDataHandler
 
     public void Save(GameData data)
     {
-        //use path.combine to link file path just in case diff OS
-        string fullPath = Path.Combine(dataDirPath, dataFileName);
+
+        string fullPath = Path.Combine(dataDirPath, dataFileName);        //use path.combine to link file path just in case diff OS
         try
         {
-            //create directory path just in case not exist
-            Directory.CreateDirectory(Path.GetDirectoryName(fullPath));
+
+            Directory.CreateDirectory(Path.GetDirectoryName(fullPath));              //create directory path just in case not exist
 
             //serialize game data object into text file
             string dataToStore = JsonUtility.ToJson(data,true);
