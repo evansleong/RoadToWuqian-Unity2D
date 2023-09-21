@@ -2,11 +2,13 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
-public class coinScript : MonoBehaviour
+public class coinScript : MonoBehaviour, IDataPersistance
 {
     [SerializeField] private int coinValue = 2;
 
     [SerializeField] private string id;
+
+    private bool isCollected = false;
 
     [ContextMenu("Generate guid for id")]
     private void GenerateGuid()
@@ -23,9 +25,28 @@ public class coinScript : MonoBehaviour
             if (pc != null)
             {
                 pc.CollectCoins(coinValue);
+                isCollected = true;
                 Destroy(gameObject);
             }
         }
+    }
+
+    public void LoadData(GameData data)
+    {
+        data.coins.TryGetValue(id, out isCollected);
+        if (isCollected)
+        {
+            visual.gameObject.SetActive(false);
+        }
+    }
+
+    public void SaveData(ref GameData data)
+    {
+        if (data.coins.ContainsKey(id))
+        {
+            data.coins.Remove(id);
+        }
+        data.coins.Add(id, isCollected);
     }
 
 }
