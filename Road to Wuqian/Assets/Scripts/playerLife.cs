@@ -3,7 +3,7 @@ using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.SceneManagement;
 
-public class playerLife : MonoBehaviour
+public class playerLife : MonoBehaviour, IDataPersistance
 {
     public int maxHealth = 10;
     public int health;
@@ -16,6 +16,9 @@ public class playerLife : MonoBehaviour
     private Checkpoint ckptMng;
     private Vector3 lastCheckPointPos;
 
+    [Header("Respawn Point")]
+    [SerializeField] private Transform rspwnPt;
+
     // Start is called before the first frame update
     private void Start()
     {
@@ -24,6 +27,7 @@ public class playerLife : MonoBehaviour
         rb = GetComponent<Rigidbody2D>();
         anim = GetComponent<Animator>();
         ckptMng = FindObjectOfType<Checkpoint>();
+        transform.position = ckptMng.getLastCkptPos();
     }
 
     private void Update()
@@ -75,7 +79,6 @@ public class playerLife : MonoBehaviour
             hasDeathSound = true;
         }
         anim.SetTrigger("death");
-        transform.position = ckptMng.getLastCkptPos();
         StartCoroutine(RestartLevel());
     }
 
@@ -83,6 +86,16 @@ public class playerLife : MonoBehaviour
     {
         yield return new WaitForSeconds(1);
         SceneManager.LoadScene(SceneManager.GetActiveScene().name);
+    }
+
+    public void LoadData(GameData data)
+    {
+        this.transform.position = data.playerPos;
+    }
+
+    public void SaveData(ref GameData data)
+    {
+        data.playerPos = this.transform.position;
     }
 
 }
