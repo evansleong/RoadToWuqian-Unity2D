@@ -13,9 +13,14 @@ public class TrapsScript : MonoBehaviour
             playerLife p = collision.gameObject.GetComponent<playerLife>();
             if (p != null)
             {
-                SoundManager.instance.PlaySound(injureSound);
-                p.TakeDamage(trapDamage);
+                TrapTrigger(p);
             }
         }
+    }
+
+    public void TrapTrigger(playerLife p)
+    {
+        SoundManager.instance.PlaySound(injureSound);
+        p.TakeDamage(trapDamage);
     }
 }
