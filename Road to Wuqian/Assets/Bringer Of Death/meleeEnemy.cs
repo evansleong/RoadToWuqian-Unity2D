@@ -7,11 +7,11 @@ public class meleeEnemy : MonoBehaviour
     [SerializeField] private float attackCooldown;
     [SerializeField] private float colliderDistance;
     [SerializeField] private float range;
+    public int damage;
     [SerializeField] private BoxCollider2D boxCollider;
     [SerializeField] private CircleCollider2D circleCollider;
     [SerializeField] private LayerMask playerLayer;
-    [SerializeField] private AudioClip meleeSound;
-    [SerializeField] private AudioClip rangeSound;
+    [SerializeField] private AudioClip getHitSound;
     private float cooldownTimer = Mathf.Infinity;
 
     public Animator anim;
@@ -37,7 +37,6 @@ public class meleeEnemy : MonoBehaviour
             {
                 cooldownTimer = 0;
                 anim.SetTrigger("meleeAttack");
-                SoundManager.instance.PlaySound(meleeSound);
             }
         }
 
@@ -52,7 +51,6 @@ public class meleeEnemy : MonoBehaviour
             {
                 cooldownTimer = 0;
                 anim.SetTrigger("rangeAttack");
-                SoundManager.instance.PlaySound(rangeSound);
             }         
         }
         if(enemyPatrol != null)
