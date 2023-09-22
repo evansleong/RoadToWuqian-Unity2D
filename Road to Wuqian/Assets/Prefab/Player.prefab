@@ -40,7 +40,7 @@ Transform:
   - {fileID: 8506663694583805933}
   - {fileID: 6554170416439657342}
   m_Father: {fileID: 0}
-  m_RootOrder: 3
+  m_RootOrder: 4
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!212 &1176985532637283213
 SpriteRenderer:
@@ -241,6 +241,7 @@ MonoBehaviour:
   health: 100
   healthBar: {fileID: 0}
   deathSound: {fileID: 8300000, guid: f7dad9bc255d21f439d1dc13987338b3, type: 3}
+  rspwnPt: {fileID: 0}
 --- !u!114 &5867929378866950489
 MonoBehaviour:
   m_ObjectHideFlags: 0

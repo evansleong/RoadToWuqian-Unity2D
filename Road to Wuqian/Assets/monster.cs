@@ -9,6 +9,7 @@ public class monster : MonoBehaviour
     public int maxHealth = 100;
     int currentHealth;
     [SerializeField] private float destroyTime = 3;
+    [SerializeField] private AudioClip attackSound;
 
     // Start is called before the first frame update
     void Start()
@@ -18,8 +19,8 @@ public class monster : MonoBehaviour
 
     public void TakeDamage(int damage)
     {
+        SoundManager.instance.PlaySound(attackSound);
         currentHealth -= damage;
-
         anim.SetTrigger("hurt");
 
         if (currentHealth <= 0)

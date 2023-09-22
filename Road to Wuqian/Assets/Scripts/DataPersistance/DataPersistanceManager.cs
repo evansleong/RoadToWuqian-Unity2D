@@ -52,7 +52,7 @@ public class DataPersistanceManager : MonoBehaviour
             dataPersistanceObj.LoadData(gameData);
         }
 
-        Debug.Log("Loaded coin count = " + gameData.coins);
+        Debug.Log("Loaded coin count = " + gameData.coinCount);
     }
 
     public void SaveGame()
@@ -63,7 +63,7 @@ public class DataPersistanceManager : MonoBehaviour
             dataPersistanceObj.SaveData(ref gameData);
         }
 
-        Debug.Log("Saved coin count = " + gameData.coins);
+        Debug.Log("Saved coin count = " + gameData.coinCount);
 
         //save data to file using data handler
         dataHandler.Save(gameData);
