@@ -4,16 +4,17 @@ using UnityEngine;
 
 public class meleeEnemy : MonoBehaviour
 {
-    [SerializeField] private float attackCooldown;
-    [SerializeField] private float colliderDistance;
-    [SerializeField] private float range;
-    [SerializeField] private int damage;
-    [SerializeField] private BoxCollider2D boxCollider;
-    [SerializeField] private CircleCollider2D circleCollider;
-    [SerializeField] private LayerMask playerLayer;
-    private float cooldownTimer = Mathf.Infinity;
+    [SerializeField] public float attackCooldown;
+    [SerializeField] public float colliderDistance;
+    [SerializeField] public float range;
+    [SerializeField] public int damage;
+    [SerializeField] public BoxCollider2D boxCollider;
+    [SerializeField] public CircleCollider2D circleCollider;
+    [SerializeField] public LayerMask playerLayer;
+    [SerializeField] private AudioClip getHitSound;
+    public float cooldownTimer = Mathf.Infinity;
 
-    private Animator anim;
+    public Animator anim;
     public playerLife playerHealth;
 
     private enemyPatrol enemyPatrol;
@@ -103,15 +104,21 @@ public class meleeEnemy : MonoBehaviour
 
     private void DamagePlayer()
     {
-        if(PlayerInSight())
+        if (PlayerInSight())
         {
-            playerHealth = gameObject.GetComponent<playerLife>();
+            playerHealth = target.GetComponent<playerLife>();
             playerHealth.TakeDamage(damage);
+            playerHealth.PlayHurtAnimation(); // Call the hurt animation method
+            SoundManager.instance.PlaySound(getHitSound);
+            Debug.Log("Player hit by skeleton");
         }
-        if(PlayerInRange())
+        if (PlayerInRange())
         {
-            playerHealth = gameObject.GetComponent<playerLife>();
-            playerHealth.TakeDamage(5);
-        }        
+            playerHealth = target.GetComponent<playerLife>();
+            playerHealth.TakeDamage(5); // Adjust the damage value as needed.
+            playerHealth.PlayHurtAnimation(); // Call the hurt animation method
+            SoundManager.instance.PlaySound(getHitSound);
+            Debug.Log("Player hit by skeleton");
+        }
     }
 }

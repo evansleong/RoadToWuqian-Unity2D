@@ -38,6 +38,11 @@ public class playerLife : MonoBehaviour, IDataPersistance
         }
     }
 
+    public void PlayHurtAnimation()
+    {
+        anim.SetTrigger("hurt");
+    }
+
     public void TakeDamage(int damage)
     {
         health -= damage;
@@ -69,6 +74,7 @@ public class playerLife : MonoBehaviour, IDataPersistance
 
     private void Die()
     {
+        anim.SetTrigger("death");
         rb.bodyType = RigidbodyType2D.Static;
         //Destroy(gameObject, 10);
         health = 0;
@@ -78,7 +84,6 @@ public class playerLife : MonoBehaviour, IDataPersistance
             SoundManager.instance.PlaySound(deathSound);
             hasDeathSound = true;
         }
-        anim.SetTrigger("death");
         StartCoroutine(RestartLevel());
     }
 

@@ -16,6 +16,8 @@ GameObject:
   - component: {fileID: 5139342632528638096}
   - component: {fileID: 5432692128135560318}
   - component: {fileID: 5230314092575956384}
+  - component: {fileID: 8196932499015086186}
+  - component: {fileID: 1707953401477970389}
   m_Layer: 6
   m_Name: Enemy - skeleton
   m_TagString: Enemy
@@ -36,7 +38,7 @@ Transform:
   m_ConstrainProportionsScale: 0
   m_Children: []
   m_Father: {fileID: 0}
-  m_RootOrder: 14
+  m_RootOrder: 9
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!212 &2602408489201379622
 SpriteRenderer:
@@ -222,4 +224,76 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   anim: {fileID: 4669817436577773996}
   maxHealth: 100
-  destroyTime: 3
+  destroyTime: 5
+  attackSound: {fileID: 8300000, guid: 4c62e7af8e2b23c4d9c3dfda1c6fa894, type: 3}
+--- !u!114 &8196932499015086186
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 3887668420107220358}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: d9c8ab5641a290946837433185420213, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  attackCooldown: 2
+  colliderDistance: 0
+  range: 6.54
+  damage: 20
+  boxCollider: {fileID: 1707953401477970389}
+  circleCollider: {fileID: 0}
+  playerLayer:
+    serializedVersion: 2
+    m_Bits: 128
+  getHitSound: {fileID: 8300000, guid: f7dad9bc255d21f439d1dc13987338b3, type: 3}
+  cooldownTimer: Infinity
+  anim: {fileID: 4669817436577773996}
+  playerHealth: {fileID: 0}
+  target: {fileID: 0}
+--- !u!61 &1707953401477970389
+BoxCollider2D:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 3887668420107220358}
+  m_Enabled: 1
+  m_Density: 1
+  m_Material: {fileID: 0}
+  m_IncludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_ExcludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_LayerOverridePriority: 0
+  m_ForceSendLayers:
+    serializedVersion: 2
+    m_Bits: 4294967295
+  m_ForceReceiveLayers:
+    serializedVersion: 2
+    m_Bits: 4294967295
+  m_ContactCaptureLayers:
+    serializedVersion: 2
+    m_Bits: 4294967295
+  m_CallbackLayers:
+    serializedVersion: 2
+    m_Bits: 4294967295
+  m_IsTrigger: 0
+  m_UsedByEffector: 0
+  m_UsedByComposite: 0
+  m_Offset: {x: 0.44869423, y: -0.042732716}
+  m_SpriteTilingProperty:
+    border: {x: 0, y: 0, z: 0, w: 0}
+    pivot: {x: 0.5, y: 0.5}
+    oldSize: {x: 9.375, y: 9.375}
+    newSize: {x: 9.375, y: 9.375}
+    adaptiveTilingThreshold: 0.5
+    drawMode: 0
+    adaptiveTiling: 0
+  m_AutoTiling: 0
+  serializedVersion: 2
+  m_Size: {x: 2.0676765, y: 3.0505347}
+  m_EdgeRadius: 0
