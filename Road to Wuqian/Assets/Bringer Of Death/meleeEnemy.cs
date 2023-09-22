@@ -4,15 +4,15 @@ using UnityEngine;
 
 public class meleeEnemy : MonoBehaviour
 {
-    [SerializeField] public float attackCooldown;
-    [SerializeField] public float colliderDistance;
-    [SerializeField] public float range;
-    [SerializeField] public int damage;
-    [SerializeField] public BoxCollider2D boxCollider;
-    [SerializeField] public CircleCollider2D circleCollider;
-    [SerializeField] public LayerMask playerLayer;
-    [SerializeField] private AudioClip getHitSound;
-    public float cooldownTimer = Mathf.Infinity;
+    [SerializeField] private float attackCooldown;
+    [SerializeField] private float colliderDistance;
+    [SerializeField] private float range;
+    [SerializeField] private BoxCollider2D boxCollider;
+    [SerializeField] private CircleCollider2D circleCollider;
+    [SerializeField] private LayerMask playerLayer;
+    [SerializeField] private AudioClip meleeSound;
+    [SerializeField] private AudioClip rangeSound;
+    private float cooldownTimer = Mathf.Infinity;
 
     public Animator anim;
     public playerLife playerHealth;
@@ -37,6 +37,7 @@ public class meleeEnemy : MonoBehaviour
             {
                 cooldownTimer = 0;
                 anim.SetTrigger("meleeAttack");
+                SoundManager.instance.PlaySound(meleeSound);
             }
         }
 
@@ -51,6 +52,7 @@ public class meleeEnemy : MonoBehaviour
             {
                 cooldownTimer = 0;
                 anim.SetTrigger("rangeAttack");
+                SoundManager.instance.PlaySound(rangeSound);
             }         
         }
         if(enemyPatrol != null)
@@ -61,10 +63,6 @@ public class meleeEnemy : MonoBehaviour
 
     private bool PlayerInRange()
     {
-        // RaycastHit2D hit = Physics2D.CircleCast(circleCollider.bounds.center + transform.right * range * transform.localScale.x * colliderDistance, 
-        // new Vector3(circleCollider.bounds.size.x * range, circleCollider.bounds.size.y, circleCollider.bounds.size.z),
-        // 0, Vector2.left, 0, playerLayer);
-
             RaycastHit2D hit = Physics2D.CircleCast(
             circleCollider.bounds.center + transform.right * range * transform.localScale.x * colliderDistance,      // Center of the circle.
             circleCollider.radius * range,     // Radius of the circle multiplied by range.

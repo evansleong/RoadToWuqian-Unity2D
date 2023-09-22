@@ -2,17 +2,37 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
-public class SerializableDictionary : MonoBehaviour
+[System.Serializable]
+
+public class SerializableDictionary <TKey,TValue> : Dictionary<TKey,TValue>, ISerializationCallbackReceiver
 {
-    // Start is called before the first frame update
-    void Start()
+    [SerializeField] private List<TKey> keys = new List<TKey>();
+    [SerializeField] private List<TValue> values = new List<TValue>();
+ 
+    public void OnBeforeSerialize()
     {
-        
+        keys.Clear();
+        values.Clear();
+
+        foreach(KeyValuePair<TKey,TValue>pair in this)
+        {
+            keys.Add(pair.Key);
+            values.Add(pair.Value);
+        }
     }
 
-    // Update is called once per frame
-    void Update()
+    public void OnAfterDeserialize()
     {
-        
+        this.Clear();
+
+        if (keys.Count != values.Count)
+        {
+            Debug.LogError("Tried to deserialize but no. of keys(" + keys.Count + ") does not match no. of (" + values.Count + ") which indicates error");
+        }
+
+        for(int i = 0; i < keys.Count; i++)
+        {
+            this.Add(keys[i], values[i]);
+        }
     }
 }

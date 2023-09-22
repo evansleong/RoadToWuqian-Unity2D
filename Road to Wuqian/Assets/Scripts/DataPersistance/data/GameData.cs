@@ -6,7 +6,7 @@ using UnityEngine;
 
 public class GameData
 {
-    public Dictionary<string,bool> coins;
+    public SerializableDictionary<string,bool> coins;
     public Vector3 playerPos;
     public int coinCount;
     //public Dictionary<string, bool> 
@@ -14,7 +14,7 @@ public class GameData
     //when start new game, initialize this value
     public GameData()
     {
-        coins = new Dictionary<string, bool>();
+        coins = new SerializableDictionary<string, bool>();
         playerPos = Vector3.zero;
         coinCount = 0;
     }
