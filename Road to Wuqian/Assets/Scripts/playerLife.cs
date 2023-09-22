@@ -85,7 +85,7 @@ public class playerLife : MonoBehaviour, IDataPersistance
     IEnumerator RestartLevel()
     {
         yield return new WaitForSeconds(1);
-        SceneManager.LoadScene(SceneManager.GetActiveScene().name);
+        //SceneManager.LoadScene(SceneManager.GetActiveScene().name);
     }
 
     public void LoadData(GameData data)

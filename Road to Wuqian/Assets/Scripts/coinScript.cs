@@ -16,6 +16,11 @@ public class coinScript : MonoBehaviour, IDataPersistance
         id = System.Guid.NewGuid().ToString();
     }
 
+    void Start()
+    {
+        visual = GetComponent<SpriteRenderer>();
+    }
+
     private void OnTriggerEnter2D(Collider2D collision)
     {
         if (collision.gameObject.CompareTag("Player"))
