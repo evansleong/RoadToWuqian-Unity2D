@@ -7,23 +7,24 @@ public class itemCollector : MonoBehaviour, IDataPersistance
 {
     private int coins = 0;
 
+    private Dictionary<string, bool> collectedCoins = new Dictionary<string, bool>();
     [SerializeField] private Text coinsText;
 
     public void LoadData(GameData data)
     {
-        this.coins = data.coins;
+        this.coins = data.coinCount;
         foreach(KeyValuePair<string,bool>pair in data.coins)
         {
             if (pair.Value)
             {
-                coins++;
+                coins+=2;
             }
         }
     }
 
     public void SaveData(ref GameData data)
     {
-        data.coins = this.coins;
+        data.coinCount = this.coins;
     }
 
     public void CollectCoins(int amount)

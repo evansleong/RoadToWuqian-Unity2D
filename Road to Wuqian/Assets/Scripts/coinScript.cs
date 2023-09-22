@@ -4,12 +4,11 @@ using UnityEngine;
 
 public class coinScript : MonoBehaviour, IDataPersistance
 {
-    [SerializeField] private int coinValue = 2;
-
+    [SerializeField] private Dictionary<string,bool> coin = new Dictionary<string, bool>();
     [SerializeField] private string id;
-
+    private int coinValue = 2;
+    private SpriteRenderer visual;
     private bool isCollected = false;
-
     [ContextMenu("Generate guid for id")]
     private void GenerateGuid()
     {
@@ -33,7 +32,8 @@ public class coinScript : MonoBehaviour, IDataPersistance
 
     public void LoadData(GameData data)
     {
-        data.coins.TryGetValue(id, out isCollected);
+        data.coins.TryGetValue(id, out bool Collected);
+        isCollected = Collected;
         if (isCollected)
         {
             visual.gameObject.SetActive(false);
