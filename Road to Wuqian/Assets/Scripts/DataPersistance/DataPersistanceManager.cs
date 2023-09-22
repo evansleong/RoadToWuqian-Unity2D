@@ -17,6 +17,15 @@ public class DataPersistanceManager : MonoBehaviour
     {
         this.dataHandler = new FileDataHandler(Application.persistentDataPath, fileName);
         this.dataPersistanceObjects = FindAllDataPersistanceObjects();
+        if (this.dataPersistanceObjects == null)
+        {
+            Debug.LogError("No IDataPersistance objects found.");
+            return;
+        }
+        else
+        {
+            Debug.Log("Found " + dataPersistanceObjects.Count + " IDataPersistance objects.");
+        }
         LoadGame();
     }
 

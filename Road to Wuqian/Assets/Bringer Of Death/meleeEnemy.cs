@@ -7,16 +7,14 @@ public class meleeEnemy : MonoBehaviour
     [SerializeField] private float attackCooldown;
     [SerializeField] private float colliderDistance;
     [SerializeField] private float range;
-    [SerializeField] private int meleeDamage;
-    [SerializeField] private int rangeDamage;
+    public int damage;
     [SerializeField] private BoxCollider2D boxCollider;
     [SerializeField] private CircleCollider2D circleCollider;
     [SerializeField] private LayerMask playerLayer;
-    [SerializeField] private AudioClip meleeSound;
-    [SerializeField] private AudioClip rangeSound;
+    [SerializeField] private AudioClip getHitSound;
     private float cooldownTimer = Mathf.Infinity;
 
-    private Animator anim;
+    public Animator anim;
     public playerLife playerHealth;
 
     private enemyPatrol enemyPatrol;
@@ -39,7 +37,6 @@ public class meleeEnemy : MonoBehaviour
             {
                 cooldownTimer = 0;
                 anim.SetTrigger("meleeAttack");
-                SoundManager.instance.PlaySound(meleeSound);
             }
         }
 
@@ -54,7 +51,6 @@ public class meleeEnemy : MonoBehaviour
             {
                 cooldownTimer = 0;
                 anim.SetTrigger("rangeAttack");
-                SoundManager.instance.PlaySound(rangeSound);
             }         
         }
         if(enemyPatrol != null)
@@ -104,15 +100,21 @@ public class meleeEnemy : MonoBehaviour
 
     private void DamagePlayer()
     {
-        if(PlayerInSight())
+        if (PlayerInSight())
         {
-            playerHealth = gameObject.GetComponent<playerLife>();
-            playerHealth.TakeDamage(meleeDamage);
+            playerHealth = target.GetComponent<playerLife>();
+            playerHealth.TakeDamage(damage);
+            playerHealth.PlayHurtAnimation(); // Call the hurt animation method
+            SoundManager.instance.PlaySound(getHitSound);
+            Debug.Log("Player hit by skeleton");
         }
-        if(PlayerInRange())
+        if (PlayerInRange())
         {
-            playerHealth = gameObject.GetComponent<playerLife>();
-            playerHealth.TakeDamage(rangeDamage);
-        }        
+            playerHealth = target.GetComponent<playerLife>();
+            playerHealth.TakeDamage(5); // Adjust the damage value as needed.
+            playerHealth.PlayHurtAnimation(); // Call the hurt animation method
+            SoundManager.instance.PlaySound(getHitSound);
+            Debug.Log("Player hit by skeleton");
+        }
     }
 }
