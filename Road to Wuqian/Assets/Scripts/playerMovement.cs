@@ -11,6 +11,7 @@ public class playerMovement : MonoBehaviour
     [SerializeField] private AudioClip walkSound;
     [SerializeField] private AudioClip jumpSound;
     [SerializeField] private AudioClip kbSound;
+    [SerializeField] private AudioClip attackSound;
 
     public float KBForce;
     public float KBCounter;

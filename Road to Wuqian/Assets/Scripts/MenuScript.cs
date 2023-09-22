@@ -30,6 +30,11 @@ public class MenuScript : MonoBehaviour
         SoundManager.instance.PlaySound(buttonSound);
         StartCoroutine(wait());
     }
+
+    public void setting()
+    {
+        SoundManager.instance.PlaySound(buttonSound);
+    }
     public void quitGame()
     {
         SoundManager.instance.PlaySound(buttonSound);

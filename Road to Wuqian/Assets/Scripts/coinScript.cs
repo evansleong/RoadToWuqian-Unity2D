@@ -4,6 +4,7 @@ using UnityEngine;
 
 public class coinScript : MonoBehaviour, IDataPersistance
 {
+    [SerializeField] private AudioClip coinSound;
     [SerializeField] private Dictionary<string,bool> coin = new Dictionary<string, bool>();
     [SerializeField] private string id;
     private int coinValue = 2;
@@ -25,6 +26,7 @@ public class coinScript : MonoBehaviour, IDataPersistance
             {
                 pc.CollectCoins(coinValue);
                 isCollected = true;
+                SoundManager.instance.PlaySound(coinSound);
                 Destroy(gameObject);
             }
         }
