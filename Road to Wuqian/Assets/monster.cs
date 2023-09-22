@@ -38,6 +38,7 @@ public class monster : MonoBehaviour
         Destroy(gameObject, destroyTime);
 
         GetComponent<Collider2D>().enabled = false;
+        GetComponent<Rigidbody2D>().simulated = false;
         this.enabled = false;
     }
 
