@@ -13,7 +13,7 @@ GameObject:
   - component: {fileID: 740877691530690828}
   - component: {fileID: 5675015225204554175}
   - component: {fileID: 6785574906632383956}
-  m_Layer: 0
+  m_Layer: 3
   m_Name: Silver Block
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -103,7 +103,7 @@ Rigidbody2D:
   m_LinearDrag: 0
   m_AngularDrag: 0.05
   m_GravityScale: 1
-  m_Material: {fileID: 0}
+  m_Material: {fileID: 6200000, guid: a78c9b673544f0248aea333fa6f204aa, type: 2}
   m_IncludeLayers:
     serializedVersion: 2
     m_Bits: 0
@@ -210,5 +210,5 @@ Transform:
   m_Children:
   - {fileID: 5263827861723122058}
   m_Father: {fileID: 0}
-  m_RootOrder: 30
+  m_RootOrder: -1
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}

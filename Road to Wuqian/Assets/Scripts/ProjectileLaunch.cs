@@ -9,26 +9,34 @@ public class ProjectileLaunch : MonoBehaviour
     public Animator anim;
     [SerializeField] private AudioClip launchSound;
 
-    public float shootTime;
+    public float shootCooldown = 170.0f; // Cooldown time in seconds
+    private float cooldownTimer = 0.0f; // Timer for the cooldown
+    private int remainingShots = 3;
     public float shootCounter;
 
     // Start is called before the first frame update
     void Start()
     {
         anim = GetComponent<Animator>();
-        shootCounter = shootTime;
     }
 
     // Update is called once per frame
     void Update()
     {
-        if(Input.GetKeyDown(KeyCode.Space) && shootCounter <= 0)
+        // Reduce the cooldown timer if it's greater than zero
+        if (cooldownTimer > 0)
+        {
+            cooldownTimer -= Time.deltaTime;
+        }
+
+        if (Input.GetKeyDown(KeyCode.Space) && remainingShots > 0 && cooldownTimer <= 0)
         {
             anim.SetTrigger("cast");
             SoundManager.instance.PlaySound(launchSound);
             Instantiate(projectilePrefab, launchPoint.position, Quaternion.identity);
-            shootCounter = shootTime;
+            remainingShots--;
+
+            cooldownTimer = shootCooldown;
         }
-        shootCounter -= Time.deltaTime; 
     }
 }
