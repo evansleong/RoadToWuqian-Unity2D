@@ -16,6 +16,8 @@ GameObject:
   - component: {fileID: 6946993765534236706}
   - component: {fileID: 4672099192465141907}
   - component: {fileID: 6873879962899063911}
+  - component: {fileID: 5962121726430767834}
+  - component: {fileID: 7833284879129705377}
   m_Layer: 6
   m_Name: Enemy - goblin
   m_TagString: Enemy
@@ -36,7 +38,7 @@ Transform:
   m_ConstrainProportionsScale: 0
   m_Children: []
   m_Father: {fileID: 0}
-  m_RootOrder: 25
+  m_RootOrder: 27
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!212 &7885767216086109844
 SpriteRenderer:
@@ -222,4 +224,75 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   anim: {fileID: 2415345018953623148}
   maxHealth: 100
-  destroyTime: 0.6
+  destroyTime: 0.7
+  attackSound: {fileID: 8300000, guid: 4c62e7af8e2b23c4d9c3dfda1c6fa894, type: 3}
+--- !u!114 &5962121726430767834
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 3179186244981259264}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: d9c8ab5641a290946837433185420213, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  attackCooldown: 1
+  colliderDistance: 0
+  range: 5.19
+  damage: 15
+  boxCollider: {fileID: 7833284879129705377}
+  circleCollider: {fileID: 0}
+  playerLayer:
+    serializedVersion: 2
+    m_Bits: 128
+  getHitSound: {fileID: 8300000, guid: f7dad9bc255d21f439d1dc13987338b3, type: 3}
+  anim: {fileID: 2415345018953623148}
+  playerHealth: {fileID: 0}
+  target: {fileID: 0}
+--- !u!61 &7833284879129705377
+BoxCollider2D:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 3179186244981259264}
+  m_Enabled: 1
+  m_Density: 1
+  m_Material: {fileID: 0}
+  m_IncludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_ExcludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_LayerOverridePriority: 0
+  m_ForceSendLayers:
+    serializedVersion: 2
+    m_Bits: 4294967295
+  m_ForceReceiveLayers:
+    serializedVersion: 2
+    m_Bits: 4294967295
+  m_ContactCaptureLayers:
+    serializedVersion: 2
+    m_Bits: 4294967295
+  m_CallbackLayers:
+    serializedVersion: 2
+    m_Bits: 4294967295
+  m_IsTrigger: 0
+  m_UsedByEffector: 0
+  m_UsedByComposite: 0
+  m_Offset: {x: -0.013312146, y: -0.09006977}
+  m_SpriteTilingProperty:
+    border: {x: 0, y: 0, z: 0, w: 0}
+    pivot: {x: 0.5, y: 0.5}
+    oldSize: {x: 1.5, y: 1.5}
+    newSize: {x: 1.5, y: 1.5}
+    adaptiveTilingThreshold: 0.5
+    drawMode: 0
+    adaptiveTiling: 0
+  m_AutoTiling: 0
+  serializedVersion: 2
+  m_Size: {x: 0.2885879, y: 0.35083276}
+  m_EdgeRadius: 0

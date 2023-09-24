@@ -3,7 +3,7 @@ using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.SceneManagement;
 
-public class playerLife : MonoBehaviour, IDataPersistance
+public class playerLife : MonoBehaviour/*, IDataPersistance*/
 {
     public int maxHealth = 10;
     public int health;
@@ -13,11 +13,11 @@ public class playerLife : MonoBehaviour, IDataPersistance
 
     private Rigidbody2D rb;
     private Animator anim;
-    private Checkpoint ckptMng;
-    private Vector3 lastCheckPointPos;
+    //private Checkpoint ckptMng;
+    //private Vector3 lastCheckPointPos;
 
-    [Header("Respawn Point")]
-    [SerializeField] private Transform rspwnPt;
+    //[Header("Respawn Point")]
+    //[SerializeField] private Transform rspwnPt;
 
     // Start is called before the first frame update
     private void Start()
@@ -26,8 +26,8 @@ public class playerLife : MonoBehaviour, IDataPersistance
         healthBar.SetMaxHealth(maxHealth);
         rb = GetComponent<Rigidbody2D>();
         anim = GetComponent<Animator>();
-        ckptMng = FindObjectOfType<Checkpoint>();
-        transform.position = ckptMng.getLastCkptPos();
+        //ckptMng = FindObjectOfType<Checkpoint>();
+        //transform.position = ckptMng.getLastCkptPos();
     }
 
     private void Update()
@@ -93,14 +93,14 @@ public class playerLife : MonoBehaviour, IDataPersistance
         SceneManager.LoadScene(SceneManager.GetActiveScene().name);
     }
 
-    public void LoadData(GameData data)
-    {
-        this.transform.position = data.playerPos;
-    }
+    //public void LoadData(GameData data)
+    //{
+    //    this.transform.position = data.playerPos;
+    //}
 
-    public void SaveData(ref GameData data)
-    {
-        data.playerPos = this.transform.position;
-    }
+    //public void SaveData(ref GameData data)
+    //{
+    //    data.playerPos = this.transform.position;
+    //}
 
 }

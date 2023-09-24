@@ -16,6 +16,7 @@ GameObject:
   - component: {fileID: 34023022947071046}
   - component: {fileID: 6153559765300173667}
   - component: {fileID: 9033359382540857981}
+  - component: {fileID: 2914768675265813230}
   m_Layer: 6
   m_Name: Enemy - Bird
   m_TagString: Enemy
@@ -37,7 +38,7 @@ Transform:
   m_Children:
   - {fileID: 3589343093775595195}
   m_Father: {fileID: 0}
-  m_RootOrder: 11
+  m_RootOrder: -1
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!212 &2421782035568528889
 SpriteRenderer:
@@ -218,9 +219,27 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 836bcb435cedeed45bfa9c1431b7478b, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  damage: 0
+  damage: 5
   playerHealth: {fileID: 0}
   playMovement: {fileID: 0}
+--- !u!114 &2914768675265813230
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 5954474082924522132}
+  m_Enabled: 0
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 674dc374e5b1e3640a237babc8282325, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  patrolPoints: []
+  moveSpeed: 0
+  patrolDestination: 0
+  playerTransform: {fileID: 0}
+  isChasing: 0
+  chaseDistance: 0
 --- !u!1 &7424792436243258490
 GameObject:
   m_ObjectHideFlags: 0
