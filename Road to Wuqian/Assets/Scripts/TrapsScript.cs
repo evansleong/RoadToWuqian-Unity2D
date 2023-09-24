@@ -16,11 +16,26 @@ public class TrapsScript : MonoBehaviour
                 TrapTrigger(p);
             }
         }
+
+        if (collision.gameObject.CompareTag("Enemy"))
+        {
+            monster m = collision.gameObject.GetComponent<monster>();
+            if (m != null)
+            {
+                TrapTriggerMonster(m);
+            }
+        }
     }
 
     public void TrapTrigger(playerLife p)
     {
         SoundManager.instance.PlaySound(injureSound);
         p.TakeDamage(trapDamage);
+    }
+
+    public void TrapTriggerMonster(monster m)
+    {
+        SoundManager.instance.PlaySound(injureSound);
+        m.TakeDamage(trapDamage);
     }
 }

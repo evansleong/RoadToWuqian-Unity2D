@@ -68,3 +68,6 @@ TagManager:
   - name: pause
     uniqueID: 3261919463
     locked: 0
+  - name: music
+    uniqueID: 261844513
+    locked: 0
