@@ -40,4 +40,9 @@ public class MenuScript : MonoBehaviour
         SoundManager.instance.PlaySound(buttonSound);
         Application.Quit();
     }
+    public void mainMenu()
+    {
+        SoundManager.instance.PlaySound(buttonSound);
+        SceneManager.LoadScene("mainMenu");
+    }
 }
