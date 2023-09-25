@@ -44,6 +44,7 @@ public class playerCombat : MonoBehaviour
         foreach(Collider2D enemy in hitEnemies)
         {
             enemy.GetComponent<monster>().TakeDamage(attackDamage);
+            enemy.GetComponent<bossLife>().TakeDamage(attackDamage);
         }
     }
 
