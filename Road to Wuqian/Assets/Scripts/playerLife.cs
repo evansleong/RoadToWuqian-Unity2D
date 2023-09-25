@@ -41,7 +41,7 @@ public class playerLife : MonoBehaviour/*, IDataPersistance*/
         if (health <= 0 && !hasDeathSound)
         {
             Die();
-            if(isDead = true)
+            if(isDead == true)
             {
                 StartCoroutine(Deadscene());
             }

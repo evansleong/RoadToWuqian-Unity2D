@@ -8,12 +8,14 @@ public class monster : MonoBehaviour
 
     public int maxHealth = 100;
     int currentHealth;
+    //public HealthBar healthBar;
     [SerializeField] private float destroyTime = 3;
     [SerializeField] private AudioClip attackSound;
 
     // Start is called before the first frame update
     void Start()
     {
+        //healthBar.SetMaxHealth(maxHealth);
         currentHealth = maxHealth;
     }
 
@@ -22,6 +24,7 @@ public class monster : MonoBehaviour
         SoundManager.instance.PlaySound(attackSound);
         currentHealth -= damage;
         anim.SetTrigger("hurt");
+        //healthBar.SetHealth(currentHealth);
 
         if (currentHealth <= 0)
         {
@@ -33,6 +36,7 @@ public class monster : MonoBehaviour
     {
         GetComponent<MonsterMovement>().enabled = false;
 
+        //healthBar.SetHealth(currentHealth);
         Debug.Log("Enemy died");
         anim.SetBool("isDead", true);
         Destroy(gameObject, destroyTime);

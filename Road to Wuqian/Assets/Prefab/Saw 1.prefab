@@ -13,6 +13,7 @@ GameObject:
   - component: {fileID: 7223030168540489995}
   - component: {fileID: 4721811665601078132}
   - component: {fileID: 7609990013433542657}
+  - component: {fileID: 7920312425284374059}
   m_Layer: 0
   m_Name: Saw
   m_TagString: Traps
@@ -151,6 +152,20 @@ CircleCollider2D:
   m_Offset: {x: -0.027513048, y: -0.024908546}
   serializedVersion: 2
   m_Radius: 1.0131437
+--- !u!114 &7920312425284374059
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1429024700424354573}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 737700d7eb763be449ccbb1c0bd37152, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  trapDamage: 100
+  injureSound: {fileID: 0}
 --- !u!1 &5690182029188587357
 GameObject:
   m_ObjectHideFlags: 0
@@ -215,7 +230,7 @@ Transform:
   - {fileID: 5819982011997615560}
   - {fileID: 398077076652012615}
   m_Father: {fileID: 0}
-  m_RootOrder: -1
+  m_RootOrder: 3
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!114 &2797860238710960848
 MonoBehaviour:

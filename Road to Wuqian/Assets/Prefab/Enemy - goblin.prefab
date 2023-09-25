@@ -38,7 +38,7 @@ Transform:
   m_ConstrainProportionsScale: 0
   m_Children: []
   m_Father: {fileID: 0}
-  m_RootOrder: 27
+  m_RootOrder: -1
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!212 &7885767216086109844
 SpriteRenderer:
@@ -224,7 +224,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   anim: {fileID: 2415345018953623148}
   maxHealth: 100
-  destroyTime: 0.7
+  destroyTime: 0.6
   attackSound: {fileID: 8300000, guid: 4c62e7af8e2b23c4d9c3dfda1c6fa894, type: 3}
 --- !u!114 &5962121726430767834
 MonoBehaviour:
@@ -243,7 +243,6 @@ MonoBehaviour:
   range: 5.19
   damage: 15
   boxCollider: {fileID: 7833284879129705377}
-  circleCollider: {fileID: 0}
   playerLayer:
     serializedVersion: 2
     m_Bits: 128

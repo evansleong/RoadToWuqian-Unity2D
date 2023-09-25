@@ -26,7 +26,7 @@ public class LevelMove_ref : MonoBehaviour
             print("Switching Scene to " + sceneBuildIndex);
             SoundManager.instance.PlaySound(portalSound);
             StartCoroutine(wait());
-            SceneManager.LoadScene(sceneBuildIndex, LoadSceneMode.Single);
+            //SceneManager.LoadScene(sceneBuildIndex, LoadSceneMode.Single);
         }
     }
 }
