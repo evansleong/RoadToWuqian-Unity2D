@@ -45,4 +45,16 @@ public class MenuScript : MonoBehaviour
         SoundManager.instance.PlaySound(buttonSound);
         SceneManager.LoadScene("mainMenu");
     }
+
+    IEnumerator Restart()
+    {
+        yield return new WaitForSeconds(2);
+        SceneManager.LoadScene(SceneManager.GetActiveScene().name);
+    }
+
+    public void RestartLevel()
+    {
+        StartCoroutine(Restart());
+        this.gameObject.SetActive(false);
+    }
 }
