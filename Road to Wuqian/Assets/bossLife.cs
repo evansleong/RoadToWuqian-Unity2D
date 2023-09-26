@@ -36,7 +36,6 @@ public class bossLife : MonoBehaviour
 
     void Die()
     {
-        GetComponent<enemyPatrol>().enabled = false;
 
         Debug.Log("Boss died");
         anim.SetBool("isDead", true);

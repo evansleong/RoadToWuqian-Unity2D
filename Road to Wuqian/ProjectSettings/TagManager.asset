@@ -10,6 +10,7 @@ TagManager:
   - Projectile
   - BulletPool
   - Checkpoint
+  - Boss
   layers:
   - Default
   - TransparentFX
