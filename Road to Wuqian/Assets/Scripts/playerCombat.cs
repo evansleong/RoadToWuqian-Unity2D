@@ -41,10 +41,26 @@ public class playerCombat : MonoBehaviour
 
         Collider2D[] hitEnemies = Physics2D.OverlapCircleAll(attackPoint.position, attackRange, enemyLayers);
 
-        foreach(Collider2D enemy in hitEnemies)
+        foreach (Collider2D enemy in hitEnemies)
         {
-            enemy.GetComponent<monster>().TakeDamage(attackDamage);
-            enemy.GetComponent<bossLife>().TakeDamage(attackDamage);
+            if (enemy.CompareTag("Enemy"))
+            {
+                // Check if the enemy has a 'monster' script
+                monster monsterScript = enemy.GetComponent<monster>();
+                if (monsterScript != null)
+                {
+                    monsterScript.TakeDamage(attackDamage);
+                }
+            }
+            else if (enemy.CompareTag("Boss"))
+            {
+                // Check if the enemy has a 'bossLife' script
+                bossLife bossScript = enemy.GetComponent<bossLife>();
+                if (bossScript != null)
+                {
+                    bossScript.TakeDamage(attackDamage);
+                }
+            }
         }
     }
 
