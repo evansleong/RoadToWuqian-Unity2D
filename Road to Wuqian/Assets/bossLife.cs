@@ -36,7 +36,6 @@ public class bossLife : MonoBehaviour
 
     void Die()
     {
-
         Debug.Log("Boss died");
         anim.SetBool("isDead", true);
         Destroy(gameObject, destroyTime);

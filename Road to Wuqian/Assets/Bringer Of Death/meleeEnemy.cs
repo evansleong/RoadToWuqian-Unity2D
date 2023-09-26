@@ -78,4 +78,9 @@ public class meleeEnemy : MonoBehaviour
             Debug.Log("Player hit by skeleton");
         }
     }
+
+    private void Deactivate()
+    {
+        gameObject.SetActive(false);
+    }
 }
