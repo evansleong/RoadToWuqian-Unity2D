@@ -19,6 +19,7 @@ public class ProjectileLaunch : MonoBehaviour
 
     [SerializeField] private Image imageCooldown;
     [SerializeField] private TMP_Text textCooldown;
+    [SerializeField] private TMP_Text remainingFireball;
 
     // Start is called before the first frame update
     void Start()
@@ -77,6 +78,7 @@ public class ProjectileLaunch : MonoBehaviour
             SoundManager.instance.PlaySound(launchSound);
             Instantiate(projectilePrefab, launchPoint.position, Quaternion.identity);
             remainingShots--;
+            remainingFireball.text = Mathf.RoundToInt(remainingShots).ToString();
 
             isCooldown = true;
             textCooldown.gameObject.SetActive(true);
