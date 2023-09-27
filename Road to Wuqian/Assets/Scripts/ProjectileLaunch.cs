@@ -14,11 +14,12 @@ public class ProjectileLaunch : MonoBehaviour
     public float shootCooldown = 5.0f; // Cooldown time in seconds
     private float cooldownTimer = 0.0f; // Timer for the cooldown
     private bool isCooldown = false;
-    private int remainingShots = 3;
+    private int remainingShots = 10;
     public float shootCounter;
 
     [SerializeField] private Image imageCooldown;
     [SerializeField] private TMP_Text textCooldown;
+    [SerializeField] private TMP_Text remainingFireball;
 
     // Start is called before the first frame update
     void Start()
@@ -77,6 +78,7 @@ public class ProjectileLaunch : MonoBehaviour
             SoundManager.instance.PlaySound(launchSound);
             Instantiate(projectilePrefab, launchPoint.position, Quaternion.identity);
             remainingShots--;
+            remainingFireball.text = Mathf.RoundToInt(remainingShots).ToString();
 
             isCooldown = true;
             textCooldown.gameObject.SetActive(true);

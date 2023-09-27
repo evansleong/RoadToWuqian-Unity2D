@@ -6,7 +6,7 @@ public class Projectile : MonoBehaviour
 {
     public Rigidbody2D projectileRb;
     public float speed;
-    //public Animator anim;
+    public Animator anim;
 
     public float projectileLife;
     public float projectileCount;
@@ -57,5 +57,11 @@ public class Projectile : MonoBehaviour
             Destroy(collision.gameObject);
         }
         Destroy(gameObject);
+
+        if(collision.gameObject.tag == "Enemy" && collision.gameObject.tag == "mapObject")
+        {
+           anim.SetTrigger("explode");
+        }
+
     }
 }

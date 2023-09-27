@@ -94,9 +94,9 @@ public class rangeEnemy : MonoBehaviour
         return false;
     }
 
-    private void OnDrawGizmos()
-    {
-        Gizmos.color = Color.black;
-        Gizmos.DrawWireSphere(circleCollider.bounds.center, circleCollider.radius * range);
-    }
+    // private void OnDrawGizmos()
+    // {
+    //     Gizmos.color = Color.black;
+    //     Gizmos.DrawWireSphere(circleCollider.bounds.center, circleCollider.radius * range);
+    // }
 }

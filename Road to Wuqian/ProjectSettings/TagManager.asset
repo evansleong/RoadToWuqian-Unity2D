@@ -11,6 +11,7 @@ TagManager:
   - BulletPool
   - Checkpoint
   - Boss
+  - mapObject
   layers:
   - Default
   - TransparentFX
