@@ -9,6 +9,7 @@ public class playerLife : MonoBehaviour/*, IDataPersistance*/
     public int health;
     public HealthBar healthBar;
     [SerializeField] private AudioClip deathSound;
+    [SerializeField] private AudioClip deathSfx;
     [SerializeField] private GameObject deathscene;
     private bool hasDeathSound = false;
     private bool isDead = false;
@@ -128,6 +129,7 @@ public class playerLife : MonoBehaviour/*, IDataPersistance*/
         yield return new WaitForSeconds(0.8f);
         //SceneManager.LoadScene(SceneManager.GetActiveScene().name);
         deathscene.SetActive(true);
+        SoundManager.instance.PlaySound(deathSfx);
     }
 
 }
