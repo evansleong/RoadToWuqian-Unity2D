@@ -36,6 +36,7 @@ public class meleeEnemy : MonoBehaviour
             {
                 cooldownTimer = 0;
                 anim.SetTrigger("meleeAttack");
+                //SoundManager.instance.PlaySound(getHitSound);
             }
         }
 

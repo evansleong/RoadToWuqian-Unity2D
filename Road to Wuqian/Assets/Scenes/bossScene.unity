@@ -2184,6 +2184,22 @@ PrefabInstance:
       propertyPath: m_LocalScale.x
       value: 1
       objectReference: {fileID: 0}
+    - target: {fileID: 3851602410039925806, guid: f0aafa0903f320d41be481e3deb63898, type: 3}
+      propertyPath: m_AnchoredPosition.x
+      value: -258
+      objectReference: {fileID: 0}
+    - target: {fileID: 3851602410039925806, guid: f0aafa0903f320d41be481e3deb63898, type: 3}
+      propertyPath: m_AnchoredPosition.y
+      value: 122.5
+      objectReference: {fileID: 0}
+    - target: {fileID: 5664396359846350998, guid: f0aafa0903f320d41be481e3deb63898, type: 3}
+      propertyPath: m_AnchoredPosition.x
+      value: -258.00003
+      objectReference: {fileID: 0}
+    - target: {fileID: 5664396359846350998, guid: f0aafa0903f320d41be481e3deb63898, type: 3}
+      propertyPath: m_AnchoredPosition.y
+      value: 122.5
+      objectReference: {fileID: 0}
     - target: {fileID: 5796810993812389696, guid: f0aafa0903f320d41be481e3deb63898, type: 3}
       propertyPath: m_AdditionalShaderChannelsFlag
       value: 25
@@ -2197,8 +2213,12 @@ PrefabInstance:
       value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 8059723189546612599, guid: f0aafa0903f320d41be481e3deb63898, type: 3}
+      propertyPath: m_AnchoredPosition.x
+      value: 127
+      objectReference: {fileID: 0}
+    - target: {fileID: 8059723189546612599, guid: f0aafa0903f320d41be481e3deb63898, type: 3}
       propertyPath: m_AnchoredPosition.y
-      value: 0
+      value: -25.100006
       objectReference: {fileID: 0}
     - target: {fileID: 8094650007788160722, guid: f0aafa0903f320d41be481e3deb63898, type: 3}
       propertyPath: m_Pivot.x
@@ -2285,8 +2305,20 @@ PrefabInstance:
       value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 8891904734031541433, guid: f0aafa0903f320d41be481e3deb63898, type: 3}
+      propertyPath: m_AnchoredPosition.x
+      value: 251
+      objectReference: {fileID: 0}
+    - target: {fileID: 8891904734031541433, guid: f0aafa0903f320d41be481e3deb63898, type: 3}
       propertyPath: m_AnchoredPosition.y
-      value: 0
+      value: -25.1
+      objectReference: {fileID: 0}
+    - target: {fileID: 9059862947470006665, guid: f0aafa0903f320d41be481e3deb63898, type: 3}
+      propertyPath: m_AnchoredPosition.x
+      value: -252.80002
+      objectReference: {fileID: 0}
+    - target: {fileID: 9059862947470006665, guid: f0aafa0903f320d41be481e3deb63898, type: 3}
+      propertyPath: m_AnchoredPosition.y
+      value: 123.1001
       objectReference: {fileID: 0}
     - target: {fileID: 9077443300628066750, guid: f0aafa0903f320d41be481e3deb63898, type: 3}
       propertyPath: anim
@@ -37434,11 +37466,14 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   anim: {fileID: 774401154}
-  maxHealth: 5000
+  gameObject: {fileID: 0}
+  maxHealth: 100
   destroyTime: 3
   attackSound: {fileID: 8300000, guid: 4c62e7af8e2b23c4d9c3dfda1c6fa894, type: 3}
+  boss: {fileID: 774401148}
   currentHealth: 0
   healthBar: {fileID: 444186104}
+  sceneBuildIndex: 3
 --- !u!1001 &1850978562
 PrefabInstance:
   m_ObjectHideFlags: 0

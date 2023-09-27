@@ -41,9 +41,10 @@ public class playerLife : MonoBehaviour/*, IDataPersistance*/
         if (health <= 0 && !hasDeathSound)
         {
             Die();
-            if(isDead == true)
+            if (isDead == true)
             {
                 StartCoroutine(Deadscene());
+                Debug.Log("load death scene");
             }
 
         }
@@ -89,6 +90,7 @@ public class playerLife : MonoBehaviour/*, IDataPersistance*/
 
     private void Die()
     {
+        Debug.Log("noob");
         anim.SetTrigger("death");
         isDead = true;
         rb.bodyType = RigidbodyType2D.Static;
@@ -100,15 +102,16 @@ public class playerLife : MonoBehaviour/*, IDataPersistance*/
             SoundManager.instance.PlaySound(deathSound);
             hasDeathSound = true;
         }
-        StartCoroutine(RestartLevel());
+        //StartCoroutine(Deadscene());
+        //StartCoroutine(RestartLevel());
 
     }
 
-    IEnumerator RestartLevel()
-    {
-        yield return new WaitForSeconds(1);
-        SceneManager.LoadScene(SceneManager.GetActiveScene().name);
-    }
+    //IEnumerator RestartLevel()
+    //{
+    //    yield return new WaitForSeconds(1);
+    //    SceneManager.LoadScene(SceneManager.GetActiveScene().name);
+    //}
 
     //public void LoadData(GameData data)
     //{
@@ -122,8 +125,9 @@ public class playerLife : MonoBehaviour/*, IDataPersistance*/
 
     IEnumerator Deadscene()
     {
-        yield return new WaitForSeconds(2);
-        SceneManager.LoadScene(SceneManager.GetActiveScene().name);
+        yield return new WaitForSeconds(0.8f);
+        //SceneManager.LoadScene(SceneManager.GetActiveScene().name);
+        deathscene.SetActive(true);
     }
 
 }

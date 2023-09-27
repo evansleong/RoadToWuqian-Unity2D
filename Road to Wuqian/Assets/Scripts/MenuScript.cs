@@ -48,13 +48,14 @@ public class MenuScript : MonoBehaviour
 
     IEnumerator Restart()
     {
-        yield return new WaitForSeconds(2);
+        yield return new WaitForSeconds(0.5f);
         SceneManager.LoadScene(SceneManager.GetActiveScene().name);
     }
 
     public void RestartLevel()
     {
+        SoundManager.instance.PlaySound(buttonSound);
         StartCoroutine(Restart());
-        this.gameObject.SetActive(false);
+        //this.gameObject.SetActive(false);
     }
 }

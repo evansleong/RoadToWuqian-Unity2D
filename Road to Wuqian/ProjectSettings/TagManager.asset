@@ -51,6 +51,9 @@ TagManager:
   - name: Map Object
     uniqueID: 179702011
     locked: 0
+  - name: portal
+    uniqueID: 397483211
+    locked: 0
   - name: Default
     uniqueID: 0
     locked: 0
