@@ -44,7 +44,7 @@ Transform:
   - {fileID: 8612470793639381645}
   - {fileID: 5311909538856801037}
   m_Father: {fileID: 0}
-  m_RootOrder: 2
+  m_RootOrder: 4
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!212 &1176985532637283213
 SpriteRenderer:
@@ -87,7 +87,7 @@ SpriteRenderer:
   m_SortingLayerID: -2065694033
   m_SortingLayer: 3
   m_SortingOrder: 0
-  m_Sprite: {fileID: 21300000, guid: e70ab950968e2ef439f986ec395141c6, type: 3}
+  m_Sprite: {fileID: 21300000, guid: 84ce2f114ad12bd4ebafc77060220324, type: 3}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
   m_FlipX: 0
   m_FlipY: 0
@@ -245,8 +245,9 @@ MonoBehaviour:
   maxHealth: 100
   health: 100
   healthBar: {fileID: 0}
-  deathSound: {fileID: 8300000, guid: f7dad9bc255d21f439d1dc13987338b3, type: 3}
-  deathscene: {fileID: 299401164575735032, guid: ad70dc62bfa81714094a9783edcc96b0, type: 3}
+  deathSound: {fileID: 8300000, guid: ed4273066274f25498a7d904043f3657, type: 3}
+  deathsfx: {fileID: 0}
+  deathscene: {fileID: 0}
 --- !u!114 &5867929378866950489
 MonoBehaviour:
   m_ObjectHideFlags: 0
