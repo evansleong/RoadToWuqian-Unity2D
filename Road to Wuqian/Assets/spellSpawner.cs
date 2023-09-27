@@ -81,7 +81,7 @@ public class spellSpawner : MonoBehaviour
     isSpellActive = true;
 
     // Start a coroutine to destroy the spell after 2 seconds.
-    StartCoroutine(DestroySpellAfterDelay(2f));
+    StartCoroutine(DestroySpellAfterDelay(4f));
     }
 
     private IEnumerator DestroySpellAfterDelay(float delay)

@@ -14,7 +14,7 @@ public class ProjectileLaunch : MonoBehaviour
     public float shootCooldown = 5.0f; // Cooldown time in seconds
     private float cooldownTimer = 0.0f; // Timer for the cooldown
     private bool isCooldown = false;
-    private int remainingShots = 3;
+    private int remainingShots = 10;
     public float shootCounter;
 
     [SerializeField] private Image imageCooldown;
