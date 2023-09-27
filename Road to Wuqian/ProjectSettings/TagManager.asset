@@ -52,9 +52,6 @@ TagManager:
   - name: Map Object
     uniqueID: 179702011
     locked: 0
-  - name: portal
-    uniqueID: 397483211
-    locked: 0
   - name: Default
     uniqueID: 0
     locked: 0
@@ -64,11 +61,11 @@ TagManager:
   - name: Enemy
     uniqueID: 4240241427
     locked: 0
+  - name: Player
+    uniqueID: 2229273263
+    locked: 0
   - name: Map
     uniqueID: 3403209625
-    locked: 0
-  - name: Player
-    uniqueID: 1622306675
     locked: 0
   - name: pause
     uniqueID: 3261919463
