@@ -13,6 +13,7 @@ TagManager:
   - Boss
   - mapObject
   - Portal
+  - potion
   layers:
   - Default
   - TransparentFX

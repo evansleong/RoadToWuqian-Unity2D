@@ -4,15 +4,27 @@ using UnityEngine;
 
 public class healingScript : MonoBehaviour
 {
-    // Start is called before the first frame update
+    [SerializeField] private AudioClip healSound;
+    public playerLife playerHealth;
+    [SerializeField] public int healingValue = 10;
+
+
     void Start()
     {
+
+    }
+
+    private void OnTriggerEnter2D(Collider2D collision)
+    {
+        if (collision.gameObject.CompareTag("Player"))
+        {
+            playerHealth = GetComponent<playerLife>();
+            playerHealth.addlife(healingValue);
+            Debug.Log("potion collide with player");
+            SoundManager.instance.PlaySound(healSound);
+            Destroy(gameObject);
+        }
         
     }
 
-    // Update is called once per frame
-    void Update()
-    {
-        
-    }
 }

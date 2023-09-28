@@ -5,7 +5,7 @@ using UnityEngine.SceneManagement;
 
 public class playerLife : MonoBehaviour/*, IDataPersistance*/
 {
-    public int life;
+    public int healingValue;
     public int maxHealth = 10;
     public int health;
     public HealthBar healthBar;
@@ -131,6 +131,25 @@ public class playerLife : MonoBehaviour/*, IDataPersistance*/
         //SceneManager.LoadScene(SceneManager.GetActiveScene().name);
         deathscene.SetActive(true);
         SoundManager.instance.PlaySound(deathSfx);
+    }
+
+    private void OnCollisionEnter2D(Collision2D potion)
+    {
+        if (potion.gameObject.CompareTag("potion"))
+        {
+            addlife(healingValue);
+        }
+    }
+
+    public void addlife(int healingValue)  // value == 10
+    {
+        if(health < maxHealth && isDead == false)
+        {
+            health += healingValue;
+            Debug.Log("health ++");
+            healthBar.SetHealth(health);
+            gameObject.SetActive(false);
+        }
     }
 
 }
