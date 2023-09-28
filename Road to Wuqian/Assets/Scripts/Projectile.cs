@@ -53,12 +53,14 @@ public class Projectile : MonoBehaviour
     {
         if(collision.gameObject.tag == "Enemy")
         {
+            monster enemy = collision.gameObject.GetComponent<monster>();
+            enemy.TakeDamage(20);
             //anim.SetTrigger("explode");
-            Destroy(collision.gameObject);
+            //Destroy(collision.gameObject);
         }
         Destroy(gameObject);
 
-        if(collision.gameObject.tag == "Enemy" && collision.gameObject.tag == "mapObject")
+        if (collision.gameObject.tag == "Enemy" && collision.gameObject.tag == "mapObject")
         {
            anim.SetTrigger("explode");
         }

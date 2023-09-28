@@ -164,8 +164,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   projectileRb: {fileID: 4953799256523946316}
   speed: 10
-  anim: {fileID: 0}
-  impactEffect: {fileID: 7718265233154932804, guid: 2e0abca46b5cd34438b595445e39ca3c, type: 3}
+  anim: {fileID: 4052546825154271157}
   projectileLife: 2
   projectileCount: 0
   plyMovement: {fileID: 0}
