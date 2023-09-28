@@ -41,6 +41,7 @@ public class itemCollector : MonoBehaviour, IDataPersistance
         CheckActivatePortal();
     }
 
+
     private void UpdateCoinsText()
     {
         if (coinsText != null)

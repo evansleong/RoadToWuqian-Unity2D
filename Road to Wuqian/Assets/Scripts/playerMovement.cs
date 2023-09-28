@@ -90,6 +90,14 @@ public class playerMovement : MonoBehaviour
         UpdateAnimationUpdate();
     }
 
+    public void SetLinearDrag(float newDrag)
+    {
+        if (rb != null)
+        {
+            rb.drag = newDrag;
+        }
+    }
+
     private void UpdateAnimationUpdate()
     {
         MovementState state;
