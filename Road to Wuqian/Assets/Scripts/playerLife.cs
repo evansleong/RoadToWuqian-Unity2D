@@ -148,7 +148,6 @@ public class playerLife : MonoBehaviour/*, IDataPersistance*/
             health += healingValue;
             Debug.Log("health ++");
             healthBar.SetHealth(health);
-            gameObject.SetActive(false);
         }
     }
 
