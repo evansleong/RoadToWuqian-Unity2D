@@ -12,6 +12,7 @@ TagManager:
   - Checkpoint
   - Boss
   - mapObject
+  - Portal
   layers:
   - Default
   - TransparentFX

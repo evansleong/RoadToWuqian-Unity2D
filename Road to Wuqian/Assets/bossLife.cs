@@ -47,7 +47,7 @@ public class bossLife : MonoBehaviour
         victoryScene();
 
         GetComponent<Collider2D>().enabled = false;
-        GetComponent<Rigidbody2D>().simulated = false;
+        //GetComponent<Rigidbody2D>().simulated = false;
         this.enabled = false;
         //SceneManager.LoadScene("VictoryScene");
     }

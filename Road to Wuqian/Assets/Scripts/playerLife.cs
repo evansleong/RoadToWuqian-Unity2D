@@ -5,6 +5,7 @@ using UnityEngine.SceneManagement;
 
 public class playerLife : MonoBehaviour/*, IDataPersistance*/
 {
+    public int life;
     public int maxHealth = 10;
     public int health;
     public HealthBar healthBar;
