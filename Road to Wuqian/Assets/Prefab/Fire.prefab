@@ -13,6 +13,7 @@ GameObject:
   - component: {fileID: 6979168839195028354}
   - component: {fileID: 5720361374800373227}
   - component: {fileID: 3486386576770571918}
+  - component: {fileID: 387181198748142689}
   m_Layer: 0
   m_Name: Fire
   m_TagString: Traps
@@ -119,7 +120,7 @@ BoxCollider2D:
   m_IsTrigger: 0
   m_UsedByEffector: 0
   m_UsedByComposite: 0
-  m_Offset: {x: -0.0065460205, y: -0.011633158}
+  m_Offset: {x: -0.0035930723, y: -0.0033720732}
   m_SpriteTilingProperty:
     border: {x: 0, y: 0, z: 0, w: 0}
     pivot: {x: 0.5, y: 0.5}
@@ -130,7 +131,7 @@ BoxCollider2D:
     adaptiveTiling: 0
   m_AutoTiling: 0
   serializedVersion: 2
-  m_Size: {x: 0.2593994, y: 0.39090753}
+  m_Size: {x: 0.14718136, y: 0.28626686}
   m_EdgeRadius: 0
 --- !u!95 &5720361374800373227
 Animator:
@@ -165,5 +166,19 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 737700d7eb763be449ccbb1c0bd37152, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  trapDamage: 50
+  trapDamage: 20
   injureSound: {fileID: 8300000, guid: fd46d5d7145935b4b98eb884e48071fb, type: 3}
+  slowDrag: 100
+--- !u!114 &387181198748142689
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1412451865489507024}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 3efc3e1e47785644997faabbac1105c9, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  slowDrag: 2
