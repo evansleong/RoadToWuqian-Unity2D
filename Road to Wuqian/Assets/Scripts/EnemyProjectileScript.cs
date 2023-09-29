@@ -10,6 +10,9 @@ public class EnemyProjectileScript : MonoBehaviour
     private float timer;
     public int damage;
     public playerLife playerHealth;
+    //public ParticleSystem ps;
+    //public SpriteRenderer sr;
+    public bool once = true;
     [SerializeField] private AudioClip projHitSound;
 
     void Awake()
@@ -42,10 +45,16 @@ public class EnemyProjectileScript : MonoBehaviour
     {
         if (other.gameObject.CompareTag("Player"))
         {
+            //var em = ps.emission;
+            //var dur = ps.duration;
+            //em.enabled = true;
+            //ps.Play();
             SoundManager.instance.PlaySound(projHitSound);
             playerHealth = other.gameObject.GetComponent<playerLife>();
             playerHealth.TakeDamage(damage);
             Debug.Log("player health -2");
+            //once = false;
+            //Invoke(nameof(ReturnPool),dur);
             gameObject.SetActive(false);
             Debug.Log("Projectile despawned");
         }
@@ -67,4 +76,8 @@ public class EnemyProjectileScript : MonoBehaviour
         }
     }
 
+    public void ReturnPool()
+    {
+        gameObject.SetActive(false);
+    }
 }

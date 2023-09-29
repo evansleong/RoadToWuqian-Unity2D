@@ -57,8 +57,8 @@ public class EnemyShooting : MonoBehaviour
                 shoot();
             }
 
-            Debug.Log("attack false");
-            anim.SetBool("isAttack", false);
+            //Debug.Log("attack false");
+            Invoke(nameof(animSet), 0.75f);
         }
     }
 
@@ -83,6 +83,11 @@ public class EnemyShooting : MonoBehaviour
             ep = bullet.GetComponent<EnemyProjectileScript>();
             ep.AimPlayer();
         }
+    }
+
+    public void animSet()
+    {
+        anim.SetBool("isAttack", false);
     }
 
 }
