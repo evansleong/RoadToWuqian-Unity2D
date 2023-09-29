@@ -61,8 +61,7 @@ public class Projectile : MonoBehaviour
         else if (collision.gameObject.tag == "Boss")
         {
             Debug.Log("FIREBALL HIT");
-            Transform bossCollider = collision.gameObject.transform.Find("BossCollider");
-            bossLife boss = bossCollider.GetComponent<bossLife>();
+            bossLife boss = collision.gameObject.GetComponent<bossLife>();
             boss.TakeDamage(20); 
         }
         Destroy(gameObject);
