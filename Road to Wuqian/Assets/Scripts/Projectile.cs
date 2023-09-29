@@ -58,6 +58,13 @@ public class Projectile : MonoBehaviour
             //anim.SetTrigger("explode");
             //Destroy(collision.gameObject);
         }
+        else if (collision.gameObject.tag == "Boss")
+        {
+            Debug.Log("FIREBALL HIT");
+            Transform bossCollider = collision.gameObject.transform.Find("BossCollider");
+            bossLife boss = bossCollider.GetComponent<bossLife>();
+            boss.TakeDamage(20); 
+        }
         Destroy(gameObject);
 
         if (collision.gameObject.tag == "Enemy" && collision.gameObject.tag == "mapObject")

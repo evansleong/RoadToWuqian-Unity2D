@@ -44,7 +44,7 @@ public class bossLife : MonoBehaviour
         anim.SetBool("isDead", true);
         Destroy(gameObject, destroyTime);
         //StartCoroutine(wait());
-        Invoke("victoryScene", 2.0f);
+        Invoke("victoryScene", 3.0f);
 
         GetComponent<Collider2D>().enabled = false;
         //GetComponent<Rigidbody2D>().simulated = false;

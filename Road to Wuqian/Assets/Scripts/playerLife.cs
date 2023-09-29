@@ -14,6 +14,10 @@ public class playerLife : MonoBehaviour/*, IDataPersistance*/
     [SerializeField] private GameObject deathscene;
     private bool hasDeathSound = false;
     private bool isDead = false;
+    private bool isStunned = false;
+
+    private bool isKnockedBack = false;
+
 
     private Rigidbody2D rb;
     private Animator anim;
@@ -61,10 +65,13 @@ public class playerLife : MonoBehaviour/*, IDataPersistance*/
         anim.SetTrigger("hurt");
     }
 
-    public void TakeDamage(int damage)
+    public void TakeDamage(int damage, bool isBossDamage = false)
     {
         health -= damage;
-        anim.SetTrigger("hurt");
+        if (!isBossDamage)
+        {
+            anim.SetTrigger("hurt");
+        }
 
         healthBar.SetHealth(health);
 
@@ -151,4 +158,20 @@ public class playerLife : MonoBehaviour/*, IDataPersistance*/
         }
     }
 
+    public void Stun()
+    {
+        anim.SetTrigger("heroStunned"); // Trigger the stunned animation
+    }
+
+    //private IEnumerator ApplyStunEffect(float duration)
+    //{
+    //    playerMovement movementScript = GetComponent<playerMovement>();
+    //    isStunned = true;
+    //    anim.SetTrigger("heroStunned"); // Trigger the stunned animation
+
+    //    // Disable player input or control here (e.g., disable movement scripts
+    //    yield return new WaitForSeconds(duration);
+    //    movementScript.enabled = true;
+    //    // Re-enable player input or control here (e.g., re-enable movement scripts)
+    //    isStunned = false;
 }

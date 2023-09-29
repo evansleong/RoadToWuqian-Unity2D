@@ -73,8 +73,9 @@ public class meleeEnemy : MonoBehaviour
         if (PlayerInSight())
         {
             playerHealth = target.GetComponent<playerLife>();
-            playerHealth.TakeDamage(damage);
-            playerHealth.PlayHurtAnimation(); // Call the hurt animation method
+            playerHealth.TakeDamage(damage, true);
+            playerHealth.Stun(); // Call the hurt animation method
+            //playerHealth.Stun(0.2f); // Stun the player for 2 seconds
             SoundManager.instance.PlaySound(getHitSound);
             Debug.Log("Player hit by skeleton");
         }
