@@ -58,4 +58,16 @@ public class MenuScript : MonoBehaviour
         StartCoroutine(Restart());
         //this.gameObject.SetActive(false);
     }
+
+    public void Pause()
+    {
+        SoundManager.instance.PlaySound(buttonSound);
+        Time.timeScale = 0;
+    }
+
+    public void Continue()
+    {
+        SoundManager.instance.PlaySound(buttonSound);
+        Time.timeScale = 1;
+    }
 }
