@@ -241,7 +241,7 @@ MonoBehaviour:
   attackCooldown: 2
   colliderDistance: 0
   range: 3.51
-  damage: 20
+  damage: 7
   boxCollider: {fileID: 1707953401477970389}
   playerLayer:
     serializedVersion: 2
@@ -282,7 +282,7 @@ BoxCollider2D:
   m_IsTrigger: 0
   m_UsedByEffector: 0
   m_UsedByComposite: 0
-  m_Offset: {x: 0.44869423, y: -0.042732716}
+  m_Offset: {x: 0.33565617, y: -0.08041215}
   m_SpriteTilingProperty:
     border: {x: 0, y: 0, z: 0, w: 0}
     pivot: {x: 0.5, y: 0.5}
@@ -293,5 +293,5 @@ BoxCollider2D:
     adaptiveTiling: 0
   m_AutoTiling: 0
   serializedVersion: 2
-  m_Size: {x: 2.0676765, y: 3.0505347}
+  m_Size: {x: 1.8416004, y: 2.9751759}
   m_EdgeRadius: 0

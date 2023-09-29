@@ -187,7 +187,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 836bcb435cedeed45bfa9c1431b7478b, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  damage: 10
+  damage: 2
   playerHealth: {fileID: 0}
   playMovement: {fileID: 0}
 --- !u!114 &4672099192465141907
@@ -241,7 +241,7 @@ MonoBehaviour:
   attackCooldown: 1
   colliderDistance: 0
   range: 5.19
-  damage: 15
+  damage: 10
   boxCollider: {fileID: 7833284879129705377}
   playerLayer:
     serializedVersion: 2

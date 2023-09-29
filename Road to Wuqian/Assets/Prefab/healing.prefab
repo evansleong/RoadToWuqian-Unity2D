@@ -33,7 +33,7 @@ Transform:
   m_ConstrainProportionsScale: 0
   m_Children: []
   m_Father: {fileID: 0}
-  m_RootOrder: 9
+  m_RootOrder: 14
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!212 &2415481074245846474
 SpriteRenderer:
@@ -146,7 +146,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   healSound: {fileID: 8300000, guid: cfce0cea076109f478783201b2a9f57f, type: 3}
   playerHealth: {fileID: 0}
-  healingValue: 10
+  healingValue: 50
 --- !u!95 &7220816528018335721
 Animator:
   serializedVersion: 5
