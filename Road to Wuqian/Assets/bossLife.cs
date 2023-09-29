@@ -43,8 +43,8 @@ public class bossLife : MonoBehaviour
         Debug.Log("Boss died");
         anim.SetBool("isDead", true);
         Destroy(gameObject, destroyTime);
-        StartCoroutine(wait());
-        victoryScene();
+        //StartCoroutine(wait());
+        Invoke("victoryScene", 2.0f);
 
         GetComponent<Collider2D>().enabled = false;
         //GetComponent<Rigidbody2D>().simulated = false;
@@ -52,11 +52,11 @@ public class bossLife : MonoBehaviour
         //SceneManager.LoadScene("VictoryScene");
     }
 
-    IEnumerator wait()
-    {  
-        Debug.Log("boss killed");
-        yield return new WaitForSeconds(3);
-    }
+    //IEnumerator wait()
+    //{  
+    //    Debug.Log("boss killed");
+    //    yield return new WaitForSeconds(3);
+    //}
 
     public void victoryScene()
     {

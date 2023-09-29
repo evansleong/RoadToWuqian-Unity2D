@@ -51,6 +51,9 @@ TagManager:
   - name: Background
     uniqueID: 3456232115
     locked: 0
+  - name: Inactive
+    uniqueID: 1917897121
+    locked: 0
   - name: Map Object
     uniqueID: 179702011
     locked: 0
@@ -74,4 +77,7 @@ TagManager:
     locked: 0
   - name: music
     uniqueID: 261844513
+    locked: 0
+  - name: playerWin
+    uniqueID: 833439365
     locked: 0
