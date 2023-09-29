@@ -19,16 +19,16 @@ public class MenuScript : MonoBehaviour
         
     }
 
-    IEnumerator wait()
-    {
-        yield return new WaitForSeconds(2);
-        SceneManager.LoadScene("SampleScene");
-    }
-
     public void playGame()
     {
         SoundManager.instance.PlaySound(buttonSound);
         StartCoroutine(wait());
+    }
+    
+    IEnumerator wait()
+    {
+        yield return new WaitForSeconds(2);
+        SceneManager.LoadScene("SampleScene");
     }
 
     public void setting()
