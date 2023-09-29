@@ -54,7 +54,7 @@ public class Projectile : MonoBehaviour
         if(collision.gameObject.tag == "Enemy")
         {
             monster enemy = collision.gameObject.GetComponent<monster>();
-            enemy.TakeDamage(20);
+            enemy.TakeDamage(40);
             //anim.SetTrigger("explode");
             //Destroy(collision.gameObject);
         }
@@ -62,7 +62,7 @@ public class Projectile : MonoBehaviour
         {
             Debug.Log("FIREBALL HIT");
             bossLife boss = collision.gameObject.GetComponent<bossLife>();
-            boss.TakeDamage(20); 
+            boss.TakeDamage(40); 
         }
         Destroy(gameObject);
 

@@ -223,7 +223,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   anim: {fileID: 4669817436577773996}
-  maxHealth: 100
+  maxHealth: 70
   destroyTime: 5
   attackSound: {fileID: 8300000, guid: 4c62e7af8e2b23c4d9c3dfda1c6fa894, type: 3}
 --- !u!114 &8196932499015086186

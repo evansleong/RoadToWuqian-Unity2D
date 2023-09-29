@@ -53,7 +53,7 @@ public class itemCollector : MonoBehaviour, IDataPersistance
     private void CheckActivatePortal()
     {
         // Check if the LevelMove_ref script reference is not null and the player has collected 10 or more coins
-        if (coins >= 10)
+        if (coins >= 20)
         {
             // Activate the portal (assuming LevelMove_ref has a method or property to activate the portal)
             portal.SetActive(true);

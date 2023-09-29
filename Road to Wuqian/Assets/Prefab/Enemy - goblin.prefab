@@ -223,7 +223,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   anim: {fileID: 2415345018953623148}
-  maxHealth: 100
+  maxHealth: 40
   destroyTime: 0.6
   attackSound: {fileID: 8300000, guid: 4c62e7af8e2b23c4d9c3dfda1c6fa894, type: 3}
 --- !u!114 &5962121726430767834
@@ -241,7 +241,7 @@ MonoBehaviour:
   attackCooldown: 1
   colliderDistance: 0
   range: 5.19
-  damage: 10
+  damage: 8
   boxCollider: {fileID: 7833284879129705377}
   playerLayer:
     serializedVersion: 2
