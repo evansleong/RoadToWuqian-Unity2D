@@ -200,6 +200,11 @@ CanvasRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 454437}
   m_CullTransparentMesh: 1
+--- !u!224 &82429744 stripped
+RectTransform:
+  m_CorrespondingSourceObject: {fileID: 530626972878552797, guid: a98519c3c5af211418598220e783848b, type: 3}
+  m_PrefabInstance: {fileID: 417405418642721499}
+  m_PrefabAsset: {fileID: 0}
 --- !u!1 &204657030
 GameObject:
   m_ObjectHideFlags: 0
@@ -2212,6 +2217,82 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   he: {fileID: 2038931518}
+--- !u!1 &1577979656
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 1577979657}
+  - component: {fileID: 1577979659}
+  - component: {fileID: 1577979658}
+  m_Layer: 5
+  m_Name: musicIcon
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!224 &1577979657
+RectTransform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1577979656}
+  m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
+  m_Children: []
+  m_Father: {fileID: 82429744}
+  m_RootOrder: -1
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+  m_AnchorMin: {x: 0.5, y: 0.5}
+  m_AnchorMax: {x: 0.5, y: 0.5}
+  m_AnchoredPosition: {x: -234, y: 0}
+  m_SizeDelta: {x: 100, y: 100}
+  m_Pivot: {x: 0.5, y: 0.5}
+--- !u!114 &1577979658
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1577979656}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: fe87c0e1cc204ed48ad3b37840f39efc, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  m_Material: {fileID: 0}
+  m_Color: {r: 1, g: 1, b: 1, a: 1}
+  m_RaycastTarget: 1
+  m_RaycastPadding: {x: 0, y: 0, z: 0, w: 0}
+  m_Maskable: 1
+  m_OnCullStateChanged:
+    m_PersistentCalls:
+      m_Calls: []
+  m_Sprite: {fileID: 21300000, guid: 919c6045bec6dea40bfb9f41c596e98a, type: 3}
+  m_Type: 0
+  m_PreserveAspect: 0
+  m_FillCenter: 1
+  m_FillMethod: 4
+  m_FillAmount: 1
+  m_FillClockwise: 1
+  m_FillOrigin: 0
+  m_UseSpriteMesh: 0
+  m_PixelsPerUnitMultiplier: 1
+--- !u!222 &1577979659
+CanvasRenderer:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1577979656}
+  m_CullTransparentMesh: 1
 --- !u!1 &1823440126
 GameObject:
   m_ObjectHideFlags: 0
@@ -2759,15 +2840,19 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 530626972878552797, guid: a98519c3c5af211418598220e783848b, type: 3}
       propertyPath: m_AnchoredPosition.x
-      value: 39
+      value: 46
       objectReference: {fileID: 0}
     - target: {fileID: 530626972878552797, guid: a98519c3c5af211418598220e783848b, type: 3}
       propertyPath: m_AnchoredPosition.y
-      value: 0
+      value: -18
       objectReference: {fileID: 0}
     - target: {fileID: 856601615962703976, guid: a98519c3c5af211418598220e783848b, type: 3}
       propertyPath: m_AnchoredPosition.x
-      value: -4.9999847
+      value: -15.799988
+      objectReference: {fileID: 0}
+    - target: {fileID: 856601615962703976, guid: a98519c3c5af211418598220e783848b, type: 3}
+      propertyPath: m_AnchoredPosition.y
+      value: -5.9000015
       objectReference: {fileID: 0}
     - target: {fileID: 1154511010821278813, guid: a98519c3c5af211418598220e783848b, type: 3}
       propertyPath: m_Type
@@ -2784,11 +2869,11 @@ PrefabInstance:
     - target: {fileID: 1352341970259974147, guid: a98519c3c5af211418598220e783848b, type: 3}
       propertyPath: m_Sprite
       value: 
-      objectReference: {fileID: 21300000, guid: ffeded6d1535c944fa941db6df8b470e, type: 3}
+      objectReference: {fileID: 21300000, guid: 061d497b9b0e669469bb10f69df1fbfc, type: 3}
     - target: {fileID: 1615807758534511776, guid: a98519c3c5af211418598220e783848b, type: 3}
       propertyPath: m_Sprite
       value: 
-      objectReference: {fileID: 21300000, guid: 3660733dd23b3ab4d81675da046c1e41, type: 3}
+      objectReference: {fileID: 21300000, guid: 1f8adecbd043f85418b2452332a693a7, type: 3}
     - target: {fileID: 2142802119410270614, guid: a98519c3c5af211418598220e783848b, type: 3}
       propertyPath: m_AnchorMax.x
       value: 0
@@ -2804,6 +2889,14 @@ PrefabInstance:
     - target: {fileID: 2142802119410270614, guid: a98519c3c5af211418598220e783848b, type: 3}
       propertyPath: m_AnchoredPosition.x
       value: 2.1600037
+      objectReference: {fileID: 0}
+    - target: {fileID: 2419850481738149884, guid: a98519c3c5af211418598220e783848b, type: 3}
+      propertyPath: m_SortingLayer
+      value: 6
+      objectReference: {fileID: 0}
+    - target: {fileID: 2419850481738149884, guid: a98519c3c5af211418598220e783848b, type: 3}
+      propertyPath: m_SortingLayerID
+      value: 261844513
       objectReference: {fileID: 0}
     - target: {fileID: 2469934483402595237, guid: a98519c3c5af211418598220e783848b, type: 3}
       propertyPath: m_LocalScale.x
@@ -2851,7 +2944,11 @@ PrefabInstance:
       objectReference: {fileID: 21300000, guid: ce3daaedd9150c44895d9fc4aba8c1fd, type: 3}
     - target: {fileID: 6844697097972689683, guid: a98519c3c5af211418598220e783848b, type: 3}
       propertyPath: m_AnchoredPosition.x
-      value: -2.4999847
+      value: -13.299988
+      objectReference: {fileID: 0}
+    - target: {fileID: 6844697097972689683, guid: a98519c3c5af211418598220e783848b, type: 3}
+      propertyPath: m_AnchoredPosition.y
+      value: -5.9000015
       objectReference: {fileID: 0}
     - target: {fileID: 7435810512321915867, guid: a98519c3c5af211418598220e783848b, type: 3}
       propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_Target
@@ -2861,24 +2958,40 @@ PrefabInstance:
       propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[2].m_Target
       value: 
       objectReference: {fileID: 1870909280}
+    - target: {fileID: 8018695355923174121, guid: a98519c3c5af211418598220e783848b, type: 3}
+      propertyPath: m_IsActive
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 8301321165905509442, guid: a98519c3c5af211418598220e783848b, type: 3}
+      propertyPath: m_AnchoredPosition.x
+      value: -10.8
+      objectReference: {fileID: 0}
+    - target: {fileID: 8301321165905509442, guid: a98519c3c5af211418598220e783848b, type: 3}
+      propertyPath: m_AnchoredPosition.y
+      value: -5.9
+      objectReference: {fileID: 0}
     - target: {fileID: 8615131904919028650, guid: a98519c3c5af211418598220e783848b, type: 3}
       propertyPath: m_Sprite
       value: 
       objectReference: {fileID: 21300000, guid: 47cd0ec296696a14c9ef4a787a1979c9, type: 3}
     - target: {fileID: 8931937118509130921, guid: a98519c3c5af211418598220e783848b, type: 3}
       propertyPath: m_AnchoredPosition.x
-      value: -256
+      value: -228
       objectReference: {fileID: 0}
     - target: {fileID: 8931937118509130921, guid: a98519c3c5af211418598220e783848b, type: 3}
       propertyPath: m_AnchoredPosition.y
-      value: -116
+      value: -76
       objectReference: {fileID: 0}
     m_RemovedComponents: []
-    m_RemovedGameObjects: []
+    m_RemovedGameObjects:
+    - {fileID: 1531407060768362414, guid: a98519c3c5af211418598220e783848b, type: 3}
     m_AddedGameObjects:
     - targetCorrespondingSourceObject: {fileID: 529743063166449790, guid: a98519c3c5af211418598220e783848b, type: 3}
       insertIndex: -1
       addedObject: {fileID: 454438}
+    - targetCorrespondingSourceObject: {fileID: 530626972878552797, guid: a98519c3c5af211418598220e783848b, type: 3}
+      insertIndex: -1
+      addedObject: {fileID: 1577979657}
     m_AddedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: a98519c3c5af211418598220e783848b, type: 3}
 --- !u!1001 &8388414150482888135

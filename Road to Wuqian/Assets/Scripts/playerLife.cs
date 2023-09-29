@@ -146,6 +146,11 @@ public class playerLife : MonoBehaviour/*, IDataPersistance*/
         if(health < maxHealth && isDead == false)
         {
             health += healingValue;
+            // Check if health exceeds maxHealth and clamp it.
+            if (health > maxHealth)
+            {
+                health = maxHealth;
+            }
             Debug.Log("health ++");
             healthBar.SetHealth(health);
         }

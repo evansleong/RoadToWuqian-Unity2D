@@ -219,7 +219,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 836bcb435cedeed45bfa9c1431b7478b, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  damage: 5
+  damage: 2
   playerHealth: {fileID: 0}
   playMovement: {fileID: 0}
 --- !u!114 &2914768675265813230
